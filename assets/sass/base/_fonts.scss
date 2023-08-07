@@ -1,0 +1,43 @@
+@use "../abstracts/mixins" as mixin;
+
+/**
+ * Fonts
+ * load fonts locally instead of from Google Fonts CDN to avoid FOIT 
+ * and avoid google tracking
+ * ========================================================================== */
+
+// Shrikhand font
+// https://fonts.google.com/specimen/Shrikhand?query=Shrikhand
+@include mixin.font-face(
+  Shrikhand,
+  "../fonts/shrikhand/Shrikhand-Regular",
+  400,
+  normal,
+  ttf woff2 woff
+);
+
+// Roboto font
+// https://fonts.google.com/specimen/Roboto?query=roboto
+@include mixin.font-face(
+  Roboto,
+  "../fonts/roboto/Roboto-Light",
+  300,
+  light,
+  ttf woff2 woff
+);
+
+@include mixin.font-face(
+  Roboto,
+  "../fonts/roboto/Roboto-Medium",
+  500,
+  medium,
+  ttf woff2 woff
+);
+
+@include mixin.font-face(
+  Roboto,
+  "../fonts/roboto/Roboto-Bold",
+  700,
+  bold,
+  ttf woff2 woff
+);
