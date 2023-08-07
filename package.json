@@ -1,0 +1,22 @@
+{
+  "name": "oc-p3-ohmyfood",
+  "version": "1.0.0",
+  "description": "OC P3 : Dynamisez une page web avec des animations CSS",
+  "author": "Raphael Sanchez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raphaelsanchez/oc-p3-ohmyfood/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphaelsanchez/oc-p3-ohmyfood.git"
+  },
+  "homepage": "https://github.com/raphaelsanchez/oc-p3-ohmyfood#readme",
+  "scripts": {
+    "dev": "sass --watch ./assets/sass/main.scss ./assets/css/style.css",
+    "build": "sass ./assets/sass/main.scss ./assets/css/style.css --style=compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.64.2"
+  }
+}
