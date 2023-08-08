@@ -24,5 +24,8 @@
   &__go-back {
     position: absolute;
     z-index: 1;
+    color: inherit;
+    text-decoration: none;
+    font-size: token.$header-icon-size;
   }
 }
