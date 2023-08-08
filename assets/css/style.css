@@ -121,4 +121,27 @@ h4 {
   font-weight: 700;
 }
 
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1.125rem;
+  background-color: #ffffff;
+  color: #101010;
+  box-shadow: 0 2px 4px hsla(0, 0%, 6%, 0.15);
+}
+.header__logo {
+  margin-inline: auto;
+  max-width: 10rem;
+}
+@media screen and (min-width: 720px) {
+  .header__logo {
+    max-width: 12.5rem;
+  }
+}
+.header__go-back {
+  position: absolute;
+  z-index: 1;
+}
+
 /*# sourceMappingURL=style.css.map */

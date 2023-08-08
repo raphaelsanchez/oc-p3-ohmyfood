@@ -1,0 +1,25 @@
+@use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mixin;
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: token.$header-padding;
+  background-color: token.$header-color-background;
+  color: token.$header-color-text;
+  @include mixin.shadow(token.$header-shadow);
+
+  &__logo {
+    margin-inline: auto;
+    max-width: token.$header-logo-mobile-width;
+    @include mixin.media(medium) {
+      max-width: token.$header-logo-desktop-width;
+    }
+  }
+
+  &__go-back {
+    position: absolute;
+    z-index: 1;
+  }
+}
