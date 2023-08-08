@@ -1,0 +1,23 @@
+@use "./variables" as var;
+
+// TOKENS
+// the smallest indivisible units of design. They are the variables that define
+// the design system.
+// ------------------------------------------------------------------------------
+
+// Document
+$body-font-family: var.$ff-sans;
+$body-font-weight: var.$fw-normal;
+$body-font-size: var.$fs-normal;
+$body-color-text: var.$clr-neutral-900;
+$body-color-heading: var.$clr-neutral-900;
+$body-color-accent: var.$clr-accent;
+$body-color-background: var.$clr-neutral-100;
+
+// Heading
+$heading-font-family: var.$ff-sans;
+$heading-font-weight: var.$fw-bold;
+$heading-font-size-h1: var.$fs-xlarge;
+$heading-font-size-h2: var.$fs-large;
+$heading-font-size-h3: var.$fs-medium;
+$heading-font-size-h4: var.$fs-normal;

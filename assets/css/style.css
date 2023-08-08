@@ -75,7 +75,50 @@ select {
   }
 }
 /**
+ * Fonts
+ * load fonts locally instead of from Google Fonts CDN to avoid FOIT 
+ * and avoid google tracking
+ * ========================================================================== */
+@font-face {
+  font-family: "Shrikhand";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/shrikhand/Shrikhand-Regular.ttf") format("truetype"), url("../fonts/shrikhand/Shrikhand-Regular.woff2") format("woff2"), url("../fonts/shrikhand/Shrikhand-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: light;
+  font-weight: 300;
+  src: url("../fonts/roboto/Roboto-Light.ttf") format("truetype"), url("../fonts/roboto/Roboto-Light.woff2") format("woff2"), url("../fonts/roboto/Roboto-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: medium;
+  font-weight: 500;
+  src: url("../fonts/roboto/Roboto-Medium.ttf") format("truetype"), url("../fonts/roboto/Roboto-Medium.woff2") format("woff2"), url("../fonts/roboto/Roboto-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: bold;
+  font-weight: 700;
+  src: url("../fonts/roboto/Roboto-Bold.ttf") format("truetype"), url("../fonts/roboto/Roboto-Bold.woff2") format("woff2"), url("../fonts/roboto/Roboto-Bold.woff") format("woff");
+}
+/**
  * Base
  * ========================================================================== */
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #101010;
+  background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
 
 /*# sourceMappingURL=style.css.map */
