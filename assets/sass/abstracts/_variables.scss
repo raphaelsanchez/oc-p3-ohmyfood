@@ -53,6 +53,13 @@ $radius-medium: 1.125rem;
 $radius-large: 1.25rem;
 $radius-full: 100vmax;
 
+// Shadow
+// ------------------------------------------------------------------------------
+$shadow-color: hsl(0 0% 6% / 0.15);
+$shadow-100: 0 2px 4px $shadow-color;
+$shadow-200: 0 4px 8px $shadow-color;
+$shadow-300: 0 4px 16px $shadow-color;
+
 // BREAKPOINTS
 // ------------------------------------------------------------------------------
 $breakpoints: (
