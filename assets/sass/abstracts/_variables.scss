@@ -67,3 +67,19 @@ $breakpoints: (
   medium: 720px,
   large: 1024px,
 );
+
+// ICONS
+// ------------------------------------------------------------------------------
+$icomoon-font-family: "icomoon" !default;
+$icomoon-font-path: "fonts" !default;
+
+$icomoon-icons: (
+  "heart": "\e900",
+  "arrow-left": "\e901",
+  "hands": "\e902",
+  "list": "\e903",
+  "location": "\e904",
+  "phone": "\e905",
+  "store": "\e906",
+  "ustencils": "\e907",
+);

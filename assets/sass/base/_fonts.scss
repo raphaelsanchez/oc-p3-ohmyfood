@@ -41,3 +41,13 @@
   bold,
   ttf woff2 woff
 );
+
+// Icomoon font icons
+// https://fonts.google.com/specimen/Roboto?query=roboto
+@include mixin.font-face(
+  icomoon,
+  "../fonts/icomoon/icomoon",
+  normal,
+  normal,
+  ttf woff svg
+);
