@@ -1,0 +1,62 @@
+// COLORS
+// ------------------------------------------------------------------------------
+
+// Primary color
+$clr-primary: #ff79da;
+$clr-primary-dark: #9356dc;
+
+// Accent color
+$clr-accent: #99e2d0;
+$clr-accent-dark: #008766;
+
+// Neutral colors
+$clr-neutral-900: #101010; // Use in DSM
+$clr-neutral-800: #353535; // Use in DSM
+$clr-neutral-700: #505050;
+$clr-neutral-600: #7e7e7e; // Use in DSM
+$clr-neutral-500: #909090;
+$clr-neutral-400: #b0b0b0;
+$clr-neutral-300: #d0d0d0;
+$clr-neutral-200: #f6f6f6; // Use in DSM
+$clr-neutral-100: #ffffff; // Use in DSM
+
+// FONT
+// ------------------------------------------------------------------------------
+
+// fs = font-size
+$fs-small: 0.93rem; // 15px
+$fs-normal: 1rem; // 16px
+$fs-medium: 1.125rem; // 18px
+$fs-large: 1.5rem; // 24px
+$fs-xlarge: 1.75rem; // 28px
+$fs-xxlarge: 2.5rem; // 40px
+
+// fw = font-weight
+$fw-normal: 300;
+$fw-medium: 500;
+$fw-bold: 700;
+
+// ff = font-family
+$ff-sans: "Roboto", sans-serif;
+$ff-cursive: "Shrikhand", cursive;
+
+// SPACES
+// ------------------------------------------------------------------------------
+$space-small: 0.75rem;
+$space-medium: 1.125rem;
+$space-large: 2.5rem;
+
+// RADIUS
+// ------------------------------------------------------------------------------
+$radius-small: 1rem;
+$radius-medium: 1.125rem;
+$radius-large: 1.25rem;
+$radius-full: 100vmax;
+
+// BREAKPOINTS
+// ------------------------------------------------------------------------------
+$breakpoints: (
+  small: 480px,
+  medium: 720px,
+  large: 1024px,
+);
