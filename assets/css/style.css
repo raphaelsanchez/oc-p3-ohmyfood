@@ -106,5 +106,19 @@ select {
 /**
  * Base
  * ========================================================================== */
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #101010;
+  background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
 
 /*# sourceMappingURL=style.css.map */

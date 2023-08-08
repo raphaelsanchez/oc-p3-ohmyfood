@@ -1,5 +1,20 @@
-@use "../abstracts/colors";
+@use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mixin;
 
 /**
  * Base
  * ========================================================================== */
+body {
+  font-family: token.$body-font-family;
+  font-weight: token.$body-font-weight;
+  color: token.$body-color-text;
+  background-color: token.$body-color-background;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: token.$heading-font-family;
+  font-weight: token.$heading-font-weight;
+}
