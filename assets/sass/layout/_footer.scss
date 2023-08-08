@@ -26,14 +26,17 @@
   }
 
   &__nav {
-    @include mixin.media(medium) {
-      display: flex;
+    display: flex;
+    flex-direction: column;
+    gap: token.$footer-gap-mobile;
+    @include mixin.media(small) {
+      flex-direction: row;
       gap: token.$footer-gap-desktop;
     }
   }
 
   .nav {
-    @include mixin.media(medium) {
+    @include mixin.media(large) {
       display: flex;
       gap: token.$footer-gap-mobile;
     }

@@ -105,6 +105,64 @@ select {
   font-weight: 700;
   src: url("../fonts/roboto/Roboto-Bold.ttf") format("truetype"), url("../fonts/roboto/Roboto-Bold.woff2") format("woff2"), url("../fonts/roboto/Roboto-Bold.woff") format("woff");
 }
+@font-face {
+  font-family: "icomoon";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/icomoon/icomoon.ttf") format("truetype"), url("../fonts/icomoon/icomoon.woff") format("woff"), url("../fonts/icomoon/icomoon.svg#icomoon") format("svg");
+}
+/**
+ * ICONS
+ * icones are generated with https://icomoon.io/app/#/select 
+ * from Figma icone library
+ * ========================================================================== */
+[class^=icon-],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon";
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-heart:before {
+  content: "\e900";
+}
+
+.icon-arrow-left:before {
+  content: "\e901";
+}
+
+.icon-hands:before {
+  content: "\e902";
+}
+
+.icon-list:before {
+  content: "\e903";
+}
+
+.icon-location:before {
+  content: "\e904";
+}
+
+.icon-phone:before {
+  content: "\e905";
+}
+
+.icon-store:before {
+  content: "\e906";
+}
+
+.icon-ustencils:before {
+  content: "\e907";
+}
+
 /**
  * Base
  * ========================================================================== */
@@ -133,10 +191,18 @@ h4 {
   list-style: none;
 }
 .nav__link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: inherit;
 }
+.nav [class*=icon-] {
+  margin-right: 0.75rem;
+}
 
+/**
+ * LAYOUT
+ * ========================================================================== */
 /**
  * HEADER
  * -------------------------------------------------------------------------- */
@@ -187,13 +253,18 @@ h4 {
   font-family: "Shrikhand", cursive;
   font-size: 1.125rem;
 }
-@media screen and (min-width: 720px) {
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+@media screen and (min-width: 480px) {
   .footer__nav {
-    display: flex;
+    flex-direction: row;
     gap: 2.5rem;
   }
 }
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 1024px) {
   .footer .nav {
     display: flex;
     gap: 0.75rem;
