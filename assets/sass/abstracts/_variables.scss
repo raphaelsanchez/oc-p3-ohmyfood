@@ -45,6 +45,7 @@ $ff-cursive: "Shrikhand", cursive;
 $space-small: 0.75rem;
 $space-medium: 1.125rem;
 $space-large: 2.5rem;
+$space-xlarge: 3rem;
 
 // RADIUS
 // ------------------------------------------------------------------------------
@@ -53,10 +54,33 @@ $radius-medium: 1.125rem;
 $radius-large: 1.25rem;
 $radius-full: 100vmax;
 
+// Shadow
+// ------------------------------------------------------------------------------
+$shadow-color: hsl(0 0% 6% / 0.15);
+$shadow-100: 0 2px 4px $shadow-color;
+$shadow-200: 0 4px 8px $shadow-color;
+$shadow-300: 0 4px 16px $shadow-color;
+
 // BREAKPOINTS
 // ------------------------------------------------------------------------------
 $breakpoints: (
   small: 480px,
   medium: 720px,
   large: 1024px,
+);
+
+// ICONS
+// ------------------------------------------------------------------------------
+$icomoon-font-family: "icomoon" !default;
+$icomoon-font-path: "fonts" !default;
+
+$icomoon-icons: (
+  "heart": "\e900",
+  "arrow-left": "\e901",
+  "hands": "\e902",
+  "list": "\e903",
+  "location": "\e904",
+  "phone": "\e905",
+  "store": "\e906",
+  "ustencils": "\e907",
 );

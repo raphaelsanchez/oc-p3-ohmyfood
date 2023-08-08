@@ -11,13 +11,36 @@
 
 <body>
 
-  <header>
-    <img src="assets/images/logo/ohmyfood@2x.svg" alt="">
+  <header class="header">
+    <a class="header__go-back" href="/" title="Revenir aux restaurants">
+      <i class="header__icon icon-arrow-left" aria-hidden="true"></i>
+    </a>
+    <img class="header__logo" src="assets/images/logo/ohmyfood@2x.svg" alt="Logo OhMyFood">
   </header>
 
   <main></main>
 
-  <footer>©2023</footer>
+  <footer class="footer">
+    <span class="footer__title">OhMyFood</span>
+    <nav class="footer__nav" aria-label="Navigation secondaire">
+      <ul class="nav">
+        <li class="nav__item">
+          <a class="nav__link" href="#"><i class="icon-ustencils" aria-hidden="true"></i> Proposer un restaurant</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#"><i class="icon-hands" aria-hidden="true"></i>Devenir partenaire</a>
+        </li>
+      </ul>
+      <ul class="nav">
+        <li class="nav__item">
+          <a class="nav__link" href="#">Mentions légales</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
 
 </body>
 

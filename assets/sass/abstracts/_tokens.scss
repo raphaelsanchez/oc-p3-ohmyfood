@@ -21,3 +21,22 @@ $heading-font-size-h1: var.$fs-xlarge;
 $heading-font-size-h2: var.$fs-large;
 $heading-font-size-h3: var.$fs-medium;
 $heading-font-size-h4: var.$fs-normal;
+
+// Header
+$header-padding: var.$space-medium;
+$header-logo-mobile-width: 10rem;
+$header-logo-desktop-width: 12.5rem;
+$header-color-background: var.$clr-neutral-100;
+$header-color-text: var.$clr-neutral-900;
+$header-shadow: var.$shadow-100;
+$header-icon-size: var.$fs-medium;
+
+// Footer
+$footer-padding-mobile: var.$space-medium;
+$footer-padding-desktop: var.$space-xlarge var.$space-large var.$space-medium;
+$footer-gap-mobile: var.$space-small;
+$footer-gap-desktop: var.$space-large;
+$footer-color-background: var.$clr-neutral-800;
+$footer-color-text: var.$clr-neutral-100;
+$footer-font-size: var.$fs-normal;
+$footer-title-font-family: var.$ff-cursive;

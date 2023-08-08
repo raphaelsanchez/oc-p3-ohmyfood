@@ -1,0 +1,9 @@
+@use "../abstracts/tokens" as token;
+
+/**
+ * GLOBAL
+ * -------------------------------------------------------------------------- */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}

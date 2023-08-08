@@ -59,3 +59,9 @@
     @content;
   }
 }
+
+// Box shadow mixin
+// ------------------------------------------------------------------------------
+@mixin shadow($context: var.$shadow-100) {
+  box-shadow: $context;
+}

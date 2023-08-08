@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as var;
+
+/**
+ * NAVS
+ * -------------------------------------------------------------------------- */
+.nav {
+  list-style: none;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  [class*="icon-"] {
+    margin-right: var.$space-small;
+  }
+}
