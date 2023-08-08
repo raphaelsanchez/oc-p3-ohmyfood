@@ -1,0 +1,11 @@
+/**
+ * NAVS
+ * -------------------------------------------------------------------------- */
+.nav {
+  list-style: none;
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+}

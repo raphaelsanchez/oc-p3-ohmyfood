@@ -1,6 +1,9 @@
 @use "../abstracts/tokens" as token;
 @use "../abstracts/mixins" as mixin;
 
+/**
+ * HEADER
+ * -------------------------------------------------------------------------- */
 .header {
   position: relative;
   display: flex;

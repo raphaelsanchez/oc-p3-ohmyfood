@@ -17,9 +17,11 @@ h4,
 p,
 figure,
 blockquote,
+ul,
 dl,
 dd {
   margin: 0;
+  padding: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -121,6 +123,23 @@ h4 {
   font-weight: 700;
 }
 
+/**
+ * COMPONENTS
+ * ========================================================================== */
+/**
+ * NAVS
+ * -------------------------------------------------------------------------- */
+.nav {
+  list-style: none;
+}
+.nav__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/**
+ * HEADER
+ * -------------------------------------------------------------------------- */
 .header {
   position: relative;
   display: flex;
@@ -142,6 +161,43 @@ h4 {
 .header__go-back {
   position: absolute;
   z-index: 1;
+}
+
+/**
+ * FOOTER
+ * -------------------------------------------------------------------------- */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.125rem;
+  background-color: #353535;
+  color: #ffffff;
+  font-size: 1rem;
+}
+@media screen and (min-width: 720px) {
+  .footer {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 5rem;
+    padding: 2.5rem 1.125rem 1.125rem;
+  }
+}
+.footer__title {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.125rem;
+}
+@media screen and (min-width: 720px) {
+  .footer__nav {
+    display: flex;
+    gap: 2.5rem;
+  }
+}
+@media screen and (min-width: 720px) {
+  .footer .nav {
+    display: flex;
+    gap: 0.75rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

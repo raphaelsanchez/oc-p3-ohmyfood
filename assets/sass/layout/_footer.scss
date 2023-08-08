@@ -1,0 +1,41 @@
+@use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mixin;
+
+/**
+ * FOOTER
+ * -------------------------------------------------------------------------- */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: token.$footer-gap-mobile;
+  padding: token.$footer-padding-mobile;
+  background-color: token.$footer-color-background;
+  color: token.$footer-color-text;
+  font-size: token.$footer-font-size;
+
+  @include mixin.media(medium) {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: calc(token.$footer-gap-desktop * 2);
+    padding: token.$footer-padding-desktop;
+  }
+
+  &__title {
+    font-family: token.$footer-title-font-family;
+    font-size: calc(token.$footer-font-size * 1.125);
+  }
+
+  &__nav {
+    @include mixin.media(medium) {
+      display: flex;
+      gap: token.$footer-gap-desktop;
+    }
+  }
+
+  .nav {
+    @include mixin.media(medium) {
+      display: flex;
+      gap: token.$footer-gap-mobile;
+    }
+  }
+}
