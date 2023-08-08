@@ -204,6 +204,14 @@ h4 {
  * LAYOUT
  * ========================================================================== */
 /**
+ * GLOBAL
+ * -------------------------------------------------------------------------- */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/**
  * HEADER
  * -------------------------------------------------------------------------- */
 .header {
@@ -249,7 +257,7 @@ h4 {
     flex-direction: row-reverse;
     align-items: center;
     gap: 5rem;
-    padding: 2.5rem 1.125rem 1.125rem;
+    padding: 3rem 2.5rem 1.125rem;
   }
 }
 .footer__title {
