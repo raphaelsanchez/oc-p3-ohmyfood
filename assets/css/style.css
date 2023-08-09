@@ -390,7 +390,8 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-section {
+.content-header,
+.content-section {
   padding: 1.125rem;
 }
 
