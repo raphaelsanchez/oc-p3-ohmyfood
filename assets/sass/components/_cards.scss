@@ -1,0 +1,170 @@
+@use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mixin;
+
+/**
+ * Cards
+ * -------------------------------------------------------------------------- */
+.card {
+  position: relative;
+  border-radius: token.$card-border-radius;
+  overflow: hidden;
+  @include mixin.shadow(token.$card-shadow);
+
+  margin-block: 2rem;
+
+  // Prevent hover on touch devices
+  @media (hover: hover) {
+    transition: box-shadow 0.3s ease-in-out;
+    &:hover {
+      @include mixin.shadow(token.$card-shadow-over);
+    }
+  }
+
+  label {
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    text-indent: -100vmax;
+  }
+
+  &__title,
+  &__description {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__link {
+    @extend label;
+  }
+
+  &__price {
+    font-weight: bold;
+  }
+
+  &-cover {
+    border-top-left-radius: token.$card-border-radius;
+    border-top-right-radius: token.$card-border-radius;
+    overflow: hidden;
+  }
+
+  // Card content
+  &-content {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    // Text
+    // Generaly contains a title and a description
+    &__text {
+      padding: token.$card-content-padding;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    // Price
+    // Generaly contains a price and a currency
+    &__price {
+      display: flex;
+      align-items: flex-end;
+      padding: token.$card-content-padding;
+    }
+
+    // Use to trigger the action add or like
+    &__checkbox {
+      display: none;
+    }
+
+    [class*="icon-"] {
+      pointer-events: none;
+      font-size: token.$card-icon-size;
+    }
+
+    // Action placeholder
+    %card-action {
+      display: grid;
+      place-content: center;
+      overflow: hidden;
+      width: 88px;
+
+      & > *:not(label) {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+
+    // Action Add
+    // Generaly contains a button
+    &__action--add {
+      @extend %card-action;
+      border-top-right-radius: token.$card-border-radius;
+      border-bottom-right-radius: token.$card-border-radius;
+      overflow: hidden;
+      background-color: token.$card-action-background;
+      color: token.$card-action-color;
+
+      max-width: 0;
+      transition: max-width 200ms ease-in-out;
+
+      [class*="icon-"] {
+        opacity: 0.25;
+        font-size: token.$card-icon-size;
+        pointer-events: none;
+        transition: scale 200ms ease-in-out;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          max-width: calc(token.$card-icon-size + 1rem);
+        }
+      }
+    }
+
+    // Trigger the action add
+    &__checkbox:checked ~ &__action--add {
+      max-width: calc(
+        token.$card-icon-size + calc(token.$card-content-padding * 3)
+      );
+      .icon-check {
+        animation: 200ms action-bounce 300ms forwards;
+      }
+    }
+
+    // Action Like
+    // Generaly contains a button
+    &__action--like {
+      @extend %card-action;
+      position: relative;
+      transition: scale 200ms ease-in-out;
+
+      .icon-heart-plain {
+        opacity: 0;
+        background: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
+        @include mixin.mask();
+      }
+
+      &:hover {
+        scale: 1.2;
+      }
+    }
+
+    // Trigger the action like
+    &__checkbox:checked ~ &__action--like {
+      .icon-heart-plain {
+        opacity: 1;
+        animation: action-bounce 300ms ease-in-out forwards;
+      }
+    }
+  }
+}
+
+@keyframes action-bounce {
+  25% {
+    opacity: 1;
+    scale: 1.75;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
