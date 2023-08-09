@@ -1,6 +1,6 @@
 @use "../abstracts/tokens" as token;
 
-.location {
+.location-search {
   display: flex;
   gap: token.$location-icon-margin;
   align-items: center;
@@ -11,4 +11,10 @@
   font-weight: token.$location-font-weight;
 
   background-color: token.$location-color-background;
+
+  input {
+    background: transparent;
+    border: none;
+    outline: none;
+  }
 }

@@ -192,7 +192,7 @@ h4 {
 /**
  * COMPONENTS
  * ========================================================================== */
-.location {
+.location-search {
   display: flex;
   gap: 0.75rem;
   align-items: center;
@@ -200,6 +200,11 @@ h4 {
   padding: 0.75rem;
   font-weight: 500;
   background-color: #eaeaea;
+}
+.location-search input {
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 /**
