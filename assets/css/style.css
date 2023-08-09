@@ -131,36 +131,44 @@ select {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-heart:before {
+.icon-arrow-left:before {
   content: "\e900";
 }
 
-.icon-arrow-left:before {
+.icon-hands:before {
   content: "\e901";
 }
 
-.icon-hands:before {
+.icon-heart-plain:before {
   content: "\e902";
 }
 
-.icon-list:before {
+.icon-heart:before {
   content: "\e903";
 }
 
-.icon-location:before {
+.icon-list:before {
   content: "\e904";
 }
 
-.icon-phone:before {
+.icon-check:before {
   content: "\e905";
 }
 
-.icon-store:before {
+.icon-phone:before {
   content: "\e906";
 }
 
 .icon-ustencils:before {
   content: "\e907";
+}
+
+.icon-store:before {
+  content: "\e908";
+}
+
+.icon-location:before {
+  content: "\e909";
 }
 
 /**
@@ -184,6 +192,132 @@ h4 {
 /**
  * COMPONENTS
  * ========================================================================== */
+/**
+ * Cards
+ * -------------------------------------------------------------------------- */
+.card {
+  position: relative;
+  border-radius: 1.125rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px hsla(0, 0%, 6%, 0.15);
+  margin-block: 2rem;
+}
+@media (hover: hover) {
+  .card {
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px hsla(0, 0%, 6%, 0.15);
+  }
+}
+.card label, .card .card__link {
+  background-color: transparent;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  text-indent: -100vmax;
+}
+.card__title, .card__description {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card__price {
+  font-weight: bold;
+}
+.card-cover {
+  border-top-left-radius: 1.125rem;
+  border-top-right-radius: 1.125rem;
+  overflow: hidden;
+}
+.card-content {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+}
+.card-content__text {
+  padding: 1.125rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card-content__price {
+  display: flex;
+  align-items: flex-end;
+  padding: 1.125rem;
+}
+.card-content__checkbox {
+  display: none;
+}
+.card-content [class*=icon-] {
+  pointer-events: none;
+  font-size: 1.5rem;
+}
+.card-content .card-content__action--like, .card-content .card-content__action--add {
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+  width: 88px;
+}
+.card-content .card-content__action--like > *:not(label):not(.card__link), .card-content .card-content__action--add > *:not(label):not(.card__link) {
+  grid-column: 1;
+  grid-row: 1;
+}
+.card-content__action--add {
+  border-top-right-radius: 1.125rem;
+  border-bottom-right-radius: 1.125rem;
+  overflow: hidden;
+  background-color: #99e2d0;
+  color: #ffffff;
+  max-width: 0;
+  transition: max-width 200ms ease-in-out;
+}
+.card-content__action--add [class*=icon-] {
+  opacity: 0.25;
+  font-size: 1.5rem;
+  pointer-events: none;
+  transition: scale 200ms ease-in-out;
+}
+@media (hover: hover) {
+  .card-content__action--add:hover {
+    max-width: 2.5rem;
+  }
+}
+.card-content__checkbox:checked ~ .card-content__action--add {
+  max-width: 4.875rem;
+}
+.card-content__checkbox:checked ~ .card-content__action--add .icon-check {
+  animation: 200ms action-bounce 300ms forwards;
+}
+.card-content__action--like {
+  position: relative;
+  transition: scale 200ms ease-in-out;
+}
+.card-content__action--like .icon-heart-plain {
+  opacity: 0;
+  background: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+.card-content__action--like:hover {
+  scale: 1.2;
+}
+.card-content__checkbox:checked ~ .card-content__action--like .icon-heart-plain {
+  opacity: 1;
+  animation: action-bounce 300ms ease-in-out forwards;
+}
+
+@keyframes action-bounce {
+  25% {
+    opacity: 1;
+    scale: 1.75;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
 /**
  * NAVS
  * -------------------------------------------------------------------------- */
@@ -209,6 +343,10 @@ h4 {
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+
+section {
+  padding: 1.125rem;
 }
 
 /**
