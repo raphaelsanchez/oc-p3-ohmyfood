@@ -22,6 +22,21 @@ $heading-font-size-h2: var.$fs-large;
 $heading-font-size-h3: var.$fs-medium;
 $heading-font-size-h4: var.$fs-normal;
 
+// Buttons
+$button-font-weight: var.$fw-medium;
+$button-font-size: var.$fs-normal;
+$button-padding: var.$space-small var.$space-medium;
+$button-color-text: var.$clr-neutral-100;
+$button-border-radius: var.$radius-full;
+$button-shadow: var.$shadow-200;
+$button-shadow-hover: var.$shadow-300;
+$button-color-background: linear-gradient(
+  to bottom,
+  var.$clr-gradient-1 0%,
+  var.$clr-gradient-2 100%
+);
+$button-color-background-hover: var.$clr-neutral-100;
+
 // Header
 $header-padding: var.$space-medium;
 $header-logo-mobile-width: 10rem;

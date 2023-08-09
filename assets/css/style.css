@@ -192,6 +192,35 @@ h4 {
 /**
  * COMPONENTS
  * ========================================================================== */
+.button {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  background: linear-gradient(to bottom, #ff79da 0%, #9356dc 100%);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.75rem 1.125rem;
+  font-weight: 500;
+  border-radius: 100vmax;
+  transition: box-shadow 200ms ease-in-out;
+  box-shadow: 0 4px 8px hsla(0, 0%, 6%, 0.15);
+}
+.button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-color: #ffffff;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+.button:hover {
+  box-shadow: 0 4px 16px hsla(0, 0%, 6%, 0.15);
+}
+.button:hover::after {
+  opacity: 0.1;
+}
+
 .location-search {
   display: flex;
   gap: 0.75rem;

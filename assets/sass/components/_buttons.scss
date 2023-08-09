@@ -1,0 +1,33 @@
+@use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mixin;
+
+.button {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  background: token.$button-color-background;
+  color: token.$button-color-text;
+  text-decoration: none;
+  padding: token.$button-padding;
+  font-weight: token.$button-font-weight;
+  border-radius: token.$button-border-radius;
+  transition: box-shadow 200ms ease-in-out;
+  @include mixin.shadow(token.$button-shadow);
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-color: token.$button-color-background-hover;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  &:hover {
+    @include mixin.shadow(token.$button-shadow-hover);
+    &::after {
+      opacity: 0.1;
+    }
+  }
+}
