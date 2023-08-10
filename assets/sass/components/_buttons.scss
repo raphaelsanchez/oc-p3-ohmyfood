@@ -7,6 +7,8 @@
   display: inline-flex;
   background: token.$button-color-background;
   color: token.$button-color-text;
+  border: none;
+  cursor: pointer;
   text-decoration: none;
   padding: token.$button-padding;
   font-weight: token.$button-font-weight;

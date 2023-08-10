@@ -20,6 +20,12 @@ body {
 
   &-section {
     @extend %sections;
+
+    & > * {
+      width: min(1040px, 100%);
+      margin-inline: auto;
+    }
+
     &__list {
       display: grid;
       grid-template-columns: repeat(var(--columns), 1fr);
