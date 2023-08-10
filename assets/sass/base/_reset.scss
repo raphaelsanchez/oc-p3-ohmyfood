@@ -9,6 +9,11 @@
   box-sizing: border-box;
 }
 
+/* Prevent tap highlight on IOS */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Remove default margin */
 body,
 h1,
