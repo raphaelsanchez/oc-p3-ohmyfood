@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mixin;
 
 /**
  * GLOBAL
@@ -8,6 +9,22 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-section {
-  padding: var.$space-medium;
+%sections {
+  padding: var.$space-large var.$space-medium;
+}
+
+.content {
+  &-header {
+    @extend %sections;
+  }
+
+  &-section {
+    @extend %sections;
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(var(--columns), 1fr);
+      gap: var(--gap);
+      margin-block: var.$space-medium;
+    }
+  }
 }

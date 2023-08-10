@@ -10,8 +10,6 @@
   overflow: hidden;
   @include mixin.shadow(token.$card-shadow);
 
-  margin-block: 2rem;
-
   // Prevent hover on touch devices
   @media (hover: hover) {
     transition: box-shadow 0.3s ease-in-out;
@@ -47,6 +45,14 @@
     border-top-left-radius: token.$card-border-radius;
     border-top-right-radius: token.$card-border-radius;
     overflow: hidden;
+
+    img {
+      aspect-ratio: 400/200;
+      object-fit: cover;
+      @include mixin.media(large) {
+        aspect-ratio: 500/200;
+      }
+    }
   }
 
   // Card content
@@ -56,7 +62,8 @@
     // Text
     // Generaly contains a title and a description
     &__text {
-      padding: token.$card-content-padding;
+      padding: token.$card-content-padding-block
+        token.$card-content-padding-inline;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -67,7 +74,8 @@
     &__price {
       display: flex;
       align-items: flex-end;
-      padding: token.$card-content-padding;
+      padding: token.$card-content-padding-block
+        token.$card-content-padding-inline;
     }
 
     // Use to trigger the action add or like
@@ -104,7 +112,7 @@
       color: token.$card-action-color;
 
       max-width: 0;
-      transition: max-width 200ms ease-in-out;
+      transition: 200ms max-width 0s ease-in-out;
 
       [class*="icon-"] {
         opacity: 0.25;
@@ -115,6 +123,7 @@
 
       @media (hover: hover) {
         &:hover {
+          transition-delay: 400ms;
           max-width: calc(token.$card-icon-size + 1rem);
         }
       }
@@ -123,7 +132,7 @@
     // Trigger the action add
     &__checkbox:checked ~ &__action--add {
       max-width: calc(
-        token.$card-icon-size + calc(token.$card-content-padding * 3)
+        token.$card-icon-size + calc(token.$card-content-padding-inline * 3)
       );
       .icon-check {
         animation: 200ms action-bounce 300ms forwards;

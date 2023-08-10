@@ -12,57 +12,119 @@
 <body>
 
   <header class="header">
-    <a class="header__go-back" href="/" title="Revenir aux restaurants">
+    <!-- <a class="header__go-back" href="/" title="Revenir aux restaurants">
       <i class="header__icon icon-arrow-left" aria-hidden="true"></i>
-    </a>
+    </a> -->
     <img class="header__logo" src="assets/images/logo/ohmyfood@2x.svg" alt="Logo OhMyFood">
   </header>
 
-  <main>
-    <section id="restaurants">
-      <h2>Restaurants</h2>
+  <main class="content">
 
-      <div class="card">
-        <div class="card-content">
-          <div class="card-content__text">
-            <h3 class="card__title">Homard et espuma de potiron</h3>
-            <p class="card__description">Accompagnés de leur crème à la truffe</p>
-          </div>
+    <form class="location-search">
+      <i class="icon-location" aria-hidden="true"></i>
+      <input type="search" class="search-bar__input" value="Paris, Belleville">
+    </form>
 
-          <div class="card-content__price">
-            <span class="card__price">39€</span>
-          </div>
+    <header class="content-header">
+      <h1 class="content-header__title">Réservez le menu qui vous convient</h1>
+      <p class="content-header__text">Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
+      <a href="#restaurants" class="button content-header__cta">Explorer nos restaurants</a>
+    </header>
 
-          <input class="card-content__checkbox" id="item-id-1" type="checkbox">
-          <div class="card-content__action--add">
-            <label for="item-id-1">Ajouter ce plat</label>
-            <i class="icon-check"></i>
-          </div>
-        </div>
-        <!-- .card-content  -->
+    <section class="content-section section--how-to" id="how-to">
+      <h2>Fonctionnement</h2>
+      <ol class="steps-list">
+        <li class="steps-list__item">
+          <i class="icon-phone" aria-hidden="true"></i>
+          <span>Choisissez un restaurant</span>
+        </li>
+        <li class="steps-list__item">
+          <i class="icon-list" aria-hidden="true"></i>
+          <span>Composez votre menu</span>
+        </li>
+        <li class="steps-list__item">
+          <i class="icon-store" aria-hidden="true"></i>
+          <span>Dégustez au restaurant</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="content-section section--restaurants" id="restaurants">
+      <h2 class="content-section__title">Restaurants</h2>
+      <div class="content-section__list">
+        <article class="card">
+          <figure class="card-cover">
+            <img src="/assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
+          </figure>
+          <div class="card-content">
+            <div class="card-content__text">
+              <h3 class="card__title">La palette du goût</h3>
+              <p class="card__description">Ménilmontant</p>
+              <a class="card__link" href="/restaurants/la-palette-du-gout/index.html">Voir la fiche</a>
+            </div>
+
+            <input class="card-content__checkbox" id="restaurant-1" type="checkbox">
+            <div class="card-content__action--like">
+              <label for="restaurant-1">Ajouter ce plat</label>
+              <i class="icon-heart"></i>
+              <i class="icon-heart-plain"></i>
+            </div>
+        </article>
+        <article class="card">
+          <figure class="card-cover">
+            <img src="/assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="">
+          </figure>
+          <div class="card-content">
+            <div class="card-content__text">
+              <h3 class="card__title">La note enchantée</h3>
+              <p class="card__description">Charonne</p>
+              <a class="card__link" href="/restaurants/la-note-enchantee/index.html">Voir la fiche</a>
+            </div>
+
+            <input class="card-content__checkbox" id="restaurant-2" type="checkbox">
+            <div class="card-content__action--like">
+              <label for="restaurant-2">Ajouter ce plat</label>
+              <i class="icon-heart"></i>
+              <i class="icon-heart-plain"></i>
+            </div>
+        </article>
+        <article class="card">
+          <figure class="card-cover">
+            <img src="/assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
+          </figure>
+          <div class="card-content">
+            <div class="card-content__text">
+              <h3 class="card__title">À la française</h3>
+              <p class="card__description">Cité Rouge</p>
+              <a class="card__link" href="/restaurants/a-la-francaise/index.html">Voir la fiche</a>
+            </div>
+
+            <input class="card-content__checkbox" id="restaurant-3" type="checkbox">
+            <div class="card-content__action--like">
+              <label for="restaurant-3">Ajouter ce plat</label>
+              <i class="icon-heart"></i>
+              <i class="icon-heart-plain"></i>
+            </div>
+        </article>
+        <article class="card">
+          <figure class="card-cover">
+            <img src="/assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
+          </figure>
+          <div class="card-content">
+            <div class="card-content__text">
+              <h3 class="card__title">Le délice des sens</h3>
+              <p class="card__description">Folie-Méricourt</p>
+              <a class="card__link" href="/restaurants/folie-mericourt/index.html">Voir la fiche</a>
+            </div>
+
+            <input class="card-content__checkbox" id="restaurant-4" type="checkbox">
+            <div class="card-content__action--like">
+              <label for="restaurant-4">Ajouter ce plat</label>
+              <i class="icon-heart"></i>
+              <i class="icon-heart-plain"></i>
+            </div>
+        </article>
       </div>
-
-      <div class="card">
-        <figure class="card-cover">
-          <img src="assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
-        </figure>
-        <div class="card-content">
-          <div class="card-content__text">
-            <h3 class="card__title">La palette du goût</h3>
-            <p class="card__description">Ménilmontant</p>
-            <a class="card__link" href="#">Voir la fiche</a>
-          </div>
-
-          <input class="card-content__checkbox" id="item-id-2" type="checkbox">
-          <div class="card-content__action--like">
-            <label for="item-id-2">Ajouter ce plat</label>
-            <i class="icon-heart"></i>
-            <i class="icon-heart-plain"></i>
-          </div>
-        </div>
-        <!-- .card-content  -->
-      </div>
-
     </section>
   </main>
 

@@ -16,9 +16,12 @@ $clr-neutral-700: #505050;
 $clr-neutral-600: #7e7e7e; // Use in DSM
 $clr-neutral-500: #909090;
 $clr-neutral-400: #b0b0b0;
-$clr-neutral-300: #d0d0d0;
+$clr-neutral-300: #eaeaea; // Use in DSM
 $clr-neutral-200: #f6f6f6; // Use in DSM
 $clr-neutral-100: #ffffff; // Use in DSM
+
+$clr-gradient-1: #ff79da;
+$clr-gradient-2: #9356dc;
 
 // FONT
 // ------------------------------------------------------------------------------
@@ -39,6 +42,10 @@ $fw-bold: 700;
 // ff = font-family
 $ff-sans: "Roboto", sans-serif;
 $ff-cursive: "Shrikhand", cursive;
+
+// flh = font-line-height
+$flh-heading: 1.2;
+$flh-body: 1.5;
 
 // SPACES
 // ------------------------------------------------------------------------------

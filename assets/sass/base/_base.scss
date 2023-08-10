@@ -7,6 +7,7 @@
 body {
   font-family: token.$body-font-family;
   font-weight: token.$body-font-weight;
+  line-height: token.$body-line-height;
   color: token.$body-color-text;
   background-color: token.$body-color-background;
 }
@@ -17,4 +18,5 @@ h3,
 h4 {
   font-family: token.$heading-font-family;
   font-weight: token.$heading-font-weight;
+  line-height: token.$heading-line-height;
 }
