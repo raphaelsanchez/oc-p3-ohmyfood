@@ -50,6 +50,8 @@
       background-color: token.$steps-list-counter-background;
       color: token.$steps-list-counter-color;
       border-radius: token.$steps-list-counter-radius;
+
+      flex-shrink: 0; // Prevents the counter from shrinking
     }
   }
 }
