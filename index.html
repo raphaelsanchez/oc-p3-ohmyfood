@@ -12,9 +12,9 @@
 <body>
 
   <header class="header">
-    <a class="header__go-back" href="/" title="Revenir aux restaurants">
+    <!-- <a class="header__go-back" href="/" title="Revenir aux restaurants">
       <i class="header__icon icon-arrow-left" aria-hidden="true"></i>
-    </a>
+    </a> -->
     <img class="header__logo" src="assets/images/logo/ohmyfood@2x.svg" alt="Logo OhMyFood">
   </header>
 
@@ -31,11 +31,25 @@
       <a href="#restaurants" class="button content-header__cta">Explorer nos restaurants</a>
     </header>
 
-    <section class="content-section" id="how-to">
+    <section class="content-section section--how-to" id="how-to">
       <h2>Fonctionnement</h2>
+      <ol class="steps-list">
+        <li class="steps-list__item">
+          <i class="icon-phone" aria-hidden="true"></i>
+          <span>Choisissez un restaurant</span>
+        </li>
+        <li class="steps-list__item">
+          <i class="icon-list" aria-hidden="true"></i>
+          <span>Composez votre menu</span>
+        </li>
+        <li class="steps-list__item">
+          <i class="icon-store" aria-hidden="true"></i>
+          <span>Dégustez au restaurant</span>
+        </li>
+      </ol>
     </section>
 
-    <section class="content-section content-section--restaurants" id="restaurants">
+    <section class="content-section section--restaurants" id="restaurants">
       <h2 class="content-section__title">Restaurants</h2>
       <div class="content-section__list">
         <article class="card">

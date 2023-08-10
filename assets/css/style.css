@@ -390,6 +390,50 @@ h4 {
 }
 
 /**
+ * Cards
+ *
+ * Tokens:
+ * $steps-list-color-background
+ * $steps-list-color-text
+ * $steps-list-color-icon:
+ * $steps-list-color-number
+ * $steps-list-padding
+ * -------------------------------------------------------------------------- */
+.steps-list {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+}
+.steps-list__item {
+  counter-increment: step;
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+  padding: 1.125rem;
+  margin-left: 0.5625rem;
+  background-color: #f6f6f6;
+  border-radius: 1.125rem;
+  box-shadow: 0 4px 8px hsla(0, 0%, 6%, 0.15);
+  color: #101010;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.steps-list__item [class^=icon-] {
+  color: #7e7e7e;
+}
+.steps-list__item::before {
+  content: counter(step);
+  display: grid;
+  place-content: center;
+  width: 24px;
+  height: 24px;
+  margin-left: -1.6875rem;
+  background-color: #9356dc;
+  color: #ffffff;
+  border-radius: 100vmax;
+}
+
+/**
  * LAYOUT
  * ========================================================================== */
 /**
@@ -400,39 +444,10 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-/**
- * HEADER
- * -------------------------------------------------------------------------- */
 .content-section, .content-header {
   padding: 2.5rem 1.125rem;
 }
 
-.content-header {
-  text-align: center;
-  background-color: #f6f6f6;
-}
-.content-header__title {
-  font-size: 1.5rem;
-}
-.content-header__text {
-  font-size: 1.125rem;
-  margin-top: 0.75rem;
-}
-.content-header__cta {
-  margin-top: 2.5rem;
-}
-
-.content-section--restaurants {
-  --columns: 1;
-  --gap: 1.125rem;
-  background-color: #f6f6f6;
-}
-@media screen and (min-width: 720px) {
-  .content-section--restaurants {
-    --columns: 2;
-    --gap: 2.5rem;
-  }
-}
 .content-section__list {
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
@@ -508,6 +523,45 @@ body {
   .footer .nav {
     display: flex;
     gap: 0.75rem;
+  }
+}
+
+.content-header {
+  text-align: center;
+  background-color: #f6f6f6;
+}
+.content-header__title {
+  font-size: 1.5rem;
+}
+.content-header__text {
+  font-size: 1.125rem;
+  margin-top: 0.75rem;
+}
+.content-header__cta {
+  margin-top: 2.5rem;
+}
+
+.section--how-to {
+  background-color: #ffffff;
+}
+.section--how-to .steps-list {
+  display: grid;
+  gap: 1.125rem;
+}
+@media screen and (min-width: 720px) {
+  .section--how-to .steps-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.section--restaurants {
+  --columns: 1;
+  --gap: 1.125rem;
+  background-color: #f6f6f6;
+}
+@media screen and (min-width: 720px) {
+  .section--restaurants {
+    --columns: 2;
+    --gap: 2.5rem;
   }
 }
 
