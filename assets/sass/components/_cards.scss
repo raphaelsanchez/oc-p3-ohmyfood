@@ -7,6 +7,7 @@
 .card {
   position: relative;
   border-radius: token.$card-border-radius;
+  background-color: token.$card-background;
   overflow: hidden;
   @include mixin.shadow(token.$card-shadow);
 
