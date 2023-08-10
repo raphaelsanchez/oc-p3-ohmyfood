@@ -10,8 +10,6 @@
   overflow: hidden;
   @include mixin.shadow(token.$card-shadow);
 
-  margin-block: 2rem;
-
   // Prevent hover on touch devices
   @media (hover: hover) {
     transition: box-shadow 0.3s ease-in-out;
@@ -47,6 +45,14 @@
     border-top-left-radius: token.$card-border-radius;
     border-top-right-radius: token.$card-border-radius;
     overflow: hidden;
+
+    img {
+      aspect-ratio: 400/200;
+      object-fit: cover;
+      @include mixin.media(large) {
+        aspect-ratio: 500/200;
+      }
+    }
   }
 
   // Card content

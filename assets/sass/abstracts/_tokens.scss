@@ -10,6 +10,7 @@ $body-font-family: var.$ff-sans;
 $body-font-weight: var.$fw-normal;
 $body-font-size: var.$fs-normal;
 $body-color-text: var.$clr-neutral-900;
+$body-line-height: var.$flh-body;
 $body-color-heading: var.$clr-neutral-900;
 $body-color-accent: var.$clr-accent;
 $body-color-background: var.$clr-neutral-100;
@@ -21,6 +22,7 @@ $heading-font-size-h1: var.$fs-xlarge;
 $heading-font-size-h2: var.$fs-large;
 $heading-font-size-h3: var.$fs-medium;
 $heading-font-size-h4: var.$fs-normal;
+$heading-line-height: var.$flh-heading;
 
 // Buttons
 $button-font-weight: var.$fw-medium;

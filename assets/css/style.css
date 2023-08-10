@@ -177,6 +177,7 @@ select {
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  line-height: 1.5;
   color: #101010;
   background-color: #ffffff;
 }
@@ -187,6 +188,7 @@ h3,
 h4 {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 /**
@@ -244,7 +246,6 @@ h4 {
   border-radius: 1.125rem;
   overflow: hidden;
   box-shadow: 0 4px 8px hsla(0, 0%, 6%, 0.15);
-  margin-block: 2rem;
 }
 @media (hover: hover) {
   .card {
@@ -273,6 +274,15 @@ h4 {
   border-top-left-radius: 1.125rem;
   border-top-right-radius: 1.125rem;
   overflow: hidden;
+}
+.card-cover img {
+  aspect-ratio: 400/200;
+  object-fit: cover;
+}
+@media screen and (min-width: 1024px) {
+  .card-cover img {
+    aspect-ratio: 500/200;
+  }
 }
 .card-content {
   display: grid;
@@ -390,9 +400,44 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-.content-header,
-.content-section {
-  padding: 1.125rem;
+/**
+ * HEADER
+ * -------------------------------------------------------------------------- */
+.content-section, .content-header {
+  padding: 2.5rem 1.125rem;
+}
+
+.content-header {
+  text-align: center;
+  background-color: #f6f6f6;
+}
+.content-header__title {
+  font-size: 1.5rem;
+}
+.content-header__text {
+  font-size: 1.125rem;
+  margin-top: 0.75rem;
+}
+.content-header__cta {
+  margin-top: 2.5rem;
+}
+
+.content-section--restaurants {
+  --columns: 1;
+  --gap: 1.125rem;
+  background-color: #f6f6f6;
+}
+@media screen and (min-width: 720px) {
+  .content-section--restaurants {
+    --columns: 2;
+    --gap: 2.5rem;
+  }
+}
+.content-section__list {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--gap);
+  margin-block: 1.125rem;
 }
 
 /**

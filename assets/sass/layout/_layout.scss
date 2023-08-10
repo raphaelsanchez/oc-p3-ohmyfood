@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mixin;
 
 /**
  * GLOBAL
@@ -8,7 +9,50 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-.content-header,
+/**
+ * HEADER
+ * -------------------------------------------------------------------------- */
+%sections {
+  padding: var.$space-large var.$space-medium;
+}
+
+.content-header {
+  @extend %sections;
+  text-align: center;
+  background-color: var.$clr-neutral-200;
+
+  &__title {
+    font-size: var.$fs-large;
+  }
+
+  &__text {
+    font-size: var.$fs-medium;
+    margin-top: var.$space-small;
+  }
+  &__cta {
+    margin-top: var.$space-large;
+  }
+}
+
 .content-section {
-  padding: var.$space-medium;
+  @extend %sections;
+
+  &--restaurants {
+    --columns: 1;
+    --gap: #{var.$space-medium};
+
+    @include mixin.media(medium) {
+      --columns: 2;
+      --gap: #{var.$space-large};
+    }
+
+    background-color: var.$clr-neutral-200;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    gap: var(--gap);
+    margin-block: var.$space-medium;
+  }
 }
