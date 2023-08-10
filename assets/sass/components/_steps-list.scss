@@ -1,0 +1,55 @@
+@use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mixin;
+
+/**
+ * Cards
+ *
+ * Tokens:
+ * $steps-list-color-background
+ * $steps-list-color-text
+ * $steps-list-color-icon:
+ * $steps-list-color-number
+ * $steps-list-padding
+ * -------------------------------------------------------------------------- */
+
+.steps-list {
+  // reset list counter
+  counter-reset: step;
+  list-style: none;
+
+  padding: 0;
+
+  &__item {
+    // increment list counter
+    counter-increment: step;
+
+    display: flex;
+    align-items: center;
+    gap: token.$steps-list-padding;
+
+    padding: token.$steps-list-padding;
+    margin-left: calc(token.$steps-list-padding * 0.5);
+    background-color: token.$steps-list-background;
+    border-radius: token.$steps-list-radius;
+    box-shadow: token.$steps-list-shadow;
+    color: token.$steps-list-text-color;
+    font-weight: token.$steps-list-text-weight;
+    line-height: token.$steps-list-text-line-height;
+
+    [class^="icon-"] {
+      color: token.$steps-list-icon-color;
+    }
+
+    &::before {
+      content: counter(step);
+      display: grid;
+      place-content: center;
+      width: 24px;
+      height: 24px;
+      margin-left: calc(token.$steps-list-padding * -1.5);
+      background-color: token.$steps-list-counter-background;
+      color: token.$steps-list-counter-color;
+      border-radius: token.$steps-list-counter-radius;
+    }
+  }
+}

@@ -75,3 +75,19 @@ $location-icon-size: var.$fs-large;
 $location-icon-color: var.$clr-accent;
 $location-icon-margin: var.$space-small;
 $location-font-weight: var.$fw-medium;
+
+// Steps List
+$steps-list-background: var.$clr-neutral-200;
+$steps-list-padding: var.$space-medium;
+$steps-list-radius: var.$radius-medium;
+$steps-list-shadow: var.$shadow-200;
+// - text
+$steps-list-text-color: var.$clr-neutral-900;
+$steps-list-text-weight: var.$fw-medium;
+$steps-list-text-line-height: var.$flh-heading;
+// - icon
+$steps-list-icon-color: var.$clr-neutral-600;
+// - counter
+$steps-list-counter-background: var.$clr-primary-dark;
+$steps-list-counter-color: var.$clr-neutral-100;
+$steps-list-counter-radius: var.$radius-full;
