@@ -351,6 +351,7 @@ h4 {
 .card-content__action--like {
   position: relative;
   transition: scale 200ms ease-in-out;
+  transform-origin: center;
 }
 .card-content__action--like .icon-heart-plain {
   opacity: 0;
