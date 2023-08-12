@@ -414,6 +414,7 @@ h4 {
 .menu-option {
   display: grid;
   grid-template-columns: 1fr auto auto;
+  max-height: 69px;
   cursor: pointer;
 }
 .menu-option__description, .menu-option__price {
