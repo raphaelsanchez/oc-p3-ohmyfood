@@ -248,140 +248,55 @@ h4 {
 /**
  * Cards
  * -------------------------------------------------------------------------- */
-.card {
+.card, .menu-option {
   position: relative;
   border-radius: 1.125rem;
-  background-color: #ffffff;
   overflow: hidden;
+  font-size: 1rem;
   box-shadow: 0 4px 8px hsla(0, 0%, 6%, 0.15);
 }
 @media (hover: hover) {
-  .card {
-    transition: box-shadow 0.3s ease-in-out;
+  .card, .menu-option {
+    transition: box-shadow 300ms ease-in-out;
   }
-  .card:hover {
+  .card:hover, .menu-option:hover {
     box-shadow: 0 4px 16px hsla(0, 0%, 6%, 0.15);
   }
 }
-.card label, .card .card__link {
-  background-color: transparent;
-  position: absolute;
-  inset: 0;
-  cursor: pointer;
-  text-indent: -100vmax;
-}
-.card__title, .card__description {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.card__price {
-  font-weight: bold;
-}
-.card-cover {
-  border-top-left-radius: 1.125rem;
-  border-top-right-radius: 1.125rem;
-  overflow: hidden;
-}
-.card-cover img {
-  aspect-ratio: 400/200;
+.card img, .menu-option img {
+  width: 100%;
   object-fit: cover;
+  aspect-ratio: 2;
 }
 @media screen and (min-width: 1024px) {
-  .card-cover img {
-    aspect-ratio: 500/200;
+  .card img, .menu-option img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2.5;
   }
+}
+.card :where(h1, h2, h3, h4), .menu-option :where(h1, h2, h3, h4) {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.card input:where([type=checkbox], [type=radio]), .menu-option input:where([type=checkbox], [type=radio]) {
+  display: none;
 }
 .card-content {
   display: grid;
-  grid-template-columns: 1fr auto auto;
-}
-.card-content__text {
-  padding: 0.75rem 1.125rem;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.card-content__price {
-  display: flex;
-  align-items: flex-end;
+  grid-template-columns: 1fr auto;
   padding: 0.75rem 1.125rem;
 }
-.card-content__checkbox {
-  display: none;
-}
-.card-content [class*=icon-] {
-  pointer-events: none;
-  font-size: 1.5rem;
-}
-.card-content .card-content__action--like, .card-content .card-content__action--add {
+.card-content__like {
   display: grid;
   place-content: center;
-  overflow: hidden;
-  width: 88px;
 }
-.card-content .card-content__action--like > *:not(label):not(.card__link), .card-content .card-content__action--add > *:not(label):not(.card__link) {
-  grid-column: 1;
-  grid-row: 1;
-}
-.card-content__action--add {
-  border-top-right-radius: 1.125rem;
-  border-bottom-right-radius: 1.125rem;
-  overflow: hidden;
-  background-color: #99e2d0;
-  color: #ffffff;
-  max-width: 0;
-  transition: 200ms max-width 0s ease-in-out;
-}
-.card-content__action--add [class*=icon-] {
-  opacity: 0.25;
-  font-size: 1.5rem;
-  pointer-events: none;
-  transition: scale 200ms ease-in-out;
-}
-@media (hover: hover) {
-  .card-content__action--add:hover {
-    transition-delay: 400ms;
-    max-width: 2.5rem;
-  }
-}
-.card-content__checkbox:checked ~ .card-content__action--add {
-  max-width: 4.875rem;
-}
-.card-content__checkbox:checked ~ .card-content__action--add .icon-check {
-  animation: 200ms action-bounce 300ms forwards;
-}
-.card-content__action--like {
-  position: relative;
-  transition: scale 200ms ease-in-out;
-  transform-origin: center;
-}
-.card-content__action--like .icon-heart-plain {
-  opacity: 0;
-  background: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-}
-.card-content__action--like:hover {
-  scale: 1.2;
-}
-.card-content__checkbox:checked ~ .card-content__action--like .icon-heart-plain {
-  opacity: 1;
-  animation: action-bounce 300ms ease-in-out forwards;
+.card-content__link {
+  position: absolute;
+  inset: 0;
+  text-indent: -100vmax;
 }
 
-@keyframes action-bounce {
-  25% {
-    opacity: 1;
-    scale: 1.75;
-  }
-  100% {
-    opacity: 1;
-    scale: 1;
-  }
-}
 /**
  * NAVS
  * -------------------------------------------------------------------------- */
@@ -396,6 +311,52 @@ h4 {
 }
 .nav [class*=icon-] {
   margin-right: 0.75rem;
+}
+
+.like {
+  display: grid;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  scale: 1;
+  transition: scale 150ms ease-in-out;
+}
+.like:hover {
+  scale: 1.2;
+}
+.like__icon {
+  grid-column: 1;
+  grid-row: 1;
+  place-self: center;
+  font-size: 1.5rem;
+}
+.like__input {
+  display: none;
+}
+.like .icon-heart {
+  color: #101010;
+  transition: color 150ms ease-in-out;
+}
+.like .icon-heart-plain {
+  background: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+.like > input[type=checkbox]:checked ~ .icon-heart-plain {
+  opacity: 1;
+  animation: 300ms bounce 0s ease-in-out;
+}
+@keyframes bounce {
+  50% {
+    scale: 1;
+  }
+  100% {
+    scale: 1;
+  }
 }
 
 /**
@@ -444,6 +405,74 @@ h4 {
 }
 
 /**
+ * Menu Item
+ * @extends .card
+ *
+ * @example:
+ *
+ * -------------------------------------------------------------------------- */
+.menu-option {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  cursor: pointer;
+}
+.menu-option__description, .menu-option__price {
+  padding: 0.75rem 1.125rem;
+  will-change: auto;
+}
+.menu-option__description {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu-option__description > * {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.menu-option__price {
+  align-self: flex-end;
+  font-weight: 700;
+}
+.menu-option__checkbox {
+  display: grid;
+  place-content: center;
+  background-color: #99e2d0;
+  color: #ffffff;
+  width: 69px;
+  max-width: 0;
+  transition: max-width 150ms ease-in-out;
+}
+.menu-option__checkbox > i {
+  grid-column: 1;
+  grid-row: 1;
+}
+.menu-option__checkbox i {
+  font-size: 1.265625rem;
+  opacity: 0.5;
+  transition: opacity 150ms ease-in-out 150ms;
+}
+.menu-option:hover > .menu-option__checkbox {
+  max-width: 2.265625rem;
+  transition: max-width 300ms ease-in-out;
+}
+.menu-option > input:checked ~ .menu-option__checkbox {
+  max-width: 69px;
+}
+.menu-option > input:checked ~ .menu-option__checkbox i {
+  opacity: 1;
+  animation: 300ms bounce 150ms ease-in-out;
+}
+@keyframes bounce {
+  50% {
+    scale: 1.75;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+/**
  * LAYOUT
  * ========================================================================== */
 /**
@@ -473,7 +502,9 @@ body {
  * HEADER
  * -------------------------------------------------------------------------- */
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   align-items: center;
   padding: 1.125rem;
@@ -642,6 +673,19 @@ body {
 }
 .restaurant-section .button {
   align-self: center;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
 }
 
 /*# sourceMappingURL=style.css.map */
