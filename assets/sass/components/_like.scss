@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/animation" as animation;
+
+.like {
+  display: grid;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  scale: 1;
+  transition: scale 150ms ease-in-out;
+
+  &:hover {
+    scale: 1.2;
+  }
+
+  &__icon {
+    grid-column: 1;
+    grid-row: 1;
+    place-self: center;
+    font-size: 1.5rem;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  .icon-heart {
+    color: var.$clr-neutral-900;
+    transition: color 150ms ease-in-out;
+  }
+
+  .icon-heart-plain {
+    background: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
+    @include mixin.mask();
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  & > input[type="checkbox"]:checked ~ .icon-heart-plain {
+    opacity: 1;
+    @include animation.bounce($scale: 1);
+  }
+}
