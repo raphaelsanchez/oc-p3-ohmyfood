@@ -1,181 +1,74 @@
-@use "../abstracts/tokens" as token;
+@use "../abstracts/variables" as var;
 @use "../abstracts/mixins" as mixin;
 
 /**
  * Cards
  * -------------------------------------------------------------------------- */
+// var: Font
+$title-font-size: var.$fs-medium !default;
+$content-font-size: var.$fs-normal !default;
+
+// var: Shadow
+$shadow: var.$shadow-200 !default;
+$shadow-over: var.$shadow-300 !default;
+$border-radius: var.$radius-medium !default;
+
+// var: Accent color
+$accent-color: var.$clr-accent !default;
+$accent-color-foreground: var.$clr-neutral-100 !default;
+
+// Component
 .card {
   position: relative;
-  border-radius: token.$card-border-radius;
-  background-color: token.$card-background;
+  border-radius: $border-radius;
   overflow: hidden;
-  @include mixin.shadow(token.$card-shadow);
+  font-size: $content-font-size;
+  @include mixin.shadow($shadow);
 
   // Prevent hover on touch devices
   @media (hover: hover) {
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 300ms ease-in-out;
     &:hover {
-      @include mixin.shadow(token.$card-shadow-over);
+      @include mixin.shadow($shadow-over);
     }
   }
 
-  label {
-    background-color: transparent;
-    position: absolute;
-    inset: 0;
-    cursor: pointer;
-    text-indent: -100vmax;
-  }
-
-  &__title,
-  &__description {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-
-  &__link {
-    @extend label;
-  }
-
-  &__price {
-    font-weight: bold;
-  }
-
-  &-cover {
-    border-top-left-radius: token.$card-border-radius;
-    border-top-right-radius: token.$card-border-radius;
-    overflow: hidden;
-
-    img {
-      aspect-ratio: 400/200;
-      object-fit: cover;
-      @include mixin.media(large) {
-        aspect-ratio: 500/200;
-      }
+  // Card cover
+  // define default image size. Can be overwritten by higher specificity
+  img {
+    @include mixin.aspect-ratio(400, 200);
+    @include mixin.media(large) {
+      @include mixin.aspect-ratio(500, 200);
     }
   }
 
-  // Card content
+  // Card-content
+  // define default title style. Can be overwritten by higher specificity
+  :where(h1, h2, h3, h4) {
+    font-size: $title-font-size;
+    font-weight: var.$fw-medium;
+  }
+
+  // Checkbox
+  // hide the checkbox/radio
+  input:where([type="checkbox"], [type="radio"]) {
+    display: none;
+  }
+
   &-content {
     display: grid;
-    grid-template-columns: 1fr auto auto;
-    // Text
-    // Generaly contains a title and a description
-    &__text {
-      padding: token.$card-content-padding-block
-        token.$card-content-padding-inline;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
+    grid-template-columns: 1fr auto;
+    padding: var.$space-small var.$space-medium;
 
-    // Price
-    // Generaly contains a price and a currency
-    &__price {
-      display: flex;
-      align-items: flex-end;
-      padding: token.$card-content-padding-block
-        token.$card-content-padding-inline;
-    }
-
-    // Use to trigger the action add or like
-    &__checkbox {
-      display: none;
-    }
-
-    [class*="icon-"] {
-      pointer-events: none;
-      font-size: token.$card-icon-size;
-    }
-
-    // Action placeholder
-    %card-action {
+    &__like {
       display: grid;
       place-content: center;
-      overflow: hidden;
-      width: 88px;
-
-      & > *:not(label) {
-        grid-column: 1;
-        grid-row: 1;
-      }
     }
 
-    // Action Add
-    // Generaly contains a button
-    &__action--add {
-      @extend %card-action;
-      border-top-right-radius: token.$card-border-radius;
-      border-bottom-right-radius: token.$card-border-radius;
-      overflow: hidden;
-      background-color: token.$card-action-background;
-      color: token.$card-action-color;
-
-      max-width: 0;
-      transition: 200ms max-width 0s ease-in-out;
-
-      [class*="icon-"] {
-        opacity: 0.25;
-        font-size: token.$card-icon-size;
-        pointer-events: none;
-        transition: scale 200ms ease-in-out;
-      }
-
-      @media (hover: hover) {
-        &:hover {
-          transition-delay: 400ms;
-          max-width: calc(token.$card-icon-size + 1rem);
-        }
-      }
+    &__link {
+      position: absolute;
+      inset: 0;
+      text-indent: -100vmax;
     }
-
-    // Trigger the action add
-    &__checkbox:checked ~ &__action--add {
-      max-width: calc(
-        token.$card-icon-size + calc(token.$card-content-padding-inline * 3)
-      );
-      .icon-check {
-        animation: 200ms action-bounce 300ms forwards;
-      }
-    }
-
-    // Action Like
-    // Generaly contains a button
-    &__action--like {
-      @extend %card-action;
-      position: relative;
-      transition: scale 200ms ease-in-out;
-      transform-origin: center;
-
-      .icon-heart-plain {
-        opacity: 0;
-        background: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
-        @include mixin.mask();
-      }
-
-      &:hover {
-        scale: 1.2;
-      }
-    }
-
-    // Trigger the action like
-    &__checkbox:checked ~ &__action--like {
-      .icon-heart-plain {
-        opacity: 1;
-        animation: action-bounce 300ms ease-in-out forwards;
-      }
-    }
-  }
-}
-
-@keyframes action-bounce {
-  25% {
-    opacity: 1;
-    scale: 1.75;
-  }
-  100% {
-    opacity: 1;
-    scale: 1;
   }
 }

@@ -1,0 +1,86 @@
+@use "./cards" as card;
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/animation" as animation;
+
+/**
+ * Menu Item
+ * @extends .card
+ *
+ * @example:
+ *
+ * -------------------------------------------------------------------------- */
+$_icon-size: calc(card.$title-font-size * 1.125);
+$_padding-block: var.$space-small;
+$_padding-inline: var.$space-medium;
+$_checkbox-max-width: 69px;
+
+.menu-option {
+  @extend .card;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+
+  cursor: pointer;
+
+  &__description,
+  &__price {
+    padding: $_padding-block $_padding-inline;
+    will-change: auto;
+  }
+
+  // Text
+  // Generally contains a title and a description
+  &__description {
+    overflow: hidden;
+    white-space: nowrap;
+
+    & > * {
+      @include mixin.text-ellipsis();
+    }
+  }
+
+  // Price
+  &__price {
+    align-self: flex-end;
+    font-weight: var.$fw-bold;
+  }
+
+  // Checkbox
+  // The checkbox is hidden by default replaced by an icon
+  &__checkbox {
+    display: grid;
+    place-content: center;
+    & > i {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    background-color: card.$accent-color;
+    color: card.$accent-color-foreground;
+    width: $_checkbox-max-width;
+    max-width: 0;
+    transition: max-width 150ms ease-in-out;
+
+    i {
+      font-size: $_icon-size;
+      opacity: 0.5;
+      transition: opacity 150ms ease-in-out 150ms;
+    }
+  }
+
+  // Hover action
+  &:hover > .menu-option__checkbox {
+    max-width: calc($_icon-size + 1rem);
+    transition: max-width 300ms ease-in-out;
+  }
+
+  // Active state
+  & > input:checked ~ .menu-option__checkbox {
+    max-width: $_checkbox-max-width;
+
+    i {
+      opacity: 1;
+      // transition: opacity 300ms ease-in-out 600ms;
+      @include animation.bounce($delay: 150ms, $scale: 1.75);
+    }
+  }
+}

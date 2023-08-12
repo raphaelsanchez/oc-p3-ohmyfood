@@ -60,12 +60,31 @@
   }
 }
 
+// Aspect ratio mixin
+// ------------------------------------------------------------------------------
+@mixin aspect-ratio($width: 16, $height: 9, $fit: cover) {
+  width: 100%;
+  object-fit: $fit;
+  aspect-ratio: $width / $height;
+}
+
 // Box shadow mixin
 // ------------------------------------------------------------------------------
 @mixin shadow($context: var.$shadow-100) {
   box-shadow: $context;
 }
 
+// Text ellipsis mixin
+// ------------------------------------------------------------------------------
+@mixin text-ellipsis($width: 100%) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: $width;
+}
+
+// Mask mixin
+// ------------------------------------------------------------------------------
 @mixin mask() {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
