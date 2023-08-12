@@ -31,8 +31,12 @@
     <header class="restaurant-header">
       <div class="restaurant-header__heading">
         <h1 class="restaurant-header__title">La Palette du goût</h1>
-        <!-- TODO: Refactor like button -->
-        <i class="icon-heart"></i>
+        <label class="like" for="restaurant-1">
+          <span class="sr-only">Ajouter ce plat aux favoris</span>
+          <input class="like__input" id="restaurant-1" type="checkbox">
+          <i class="like__icon icon-heart" aria-hidden="true"></i>
+          <i class="like__icon icon-heart-plain" aria-hidden="true"></i>
+        </label>
       </div>
     </header>
 
@@ -40,192 +44,163 @@
       <form>
         <fieldset>
           <legend>Entrées</legend>
-          <div class="card">
-            <div class="card-content">
-              <div class="card-content__text">
-                <h3 class="card__title">Fricassée d'escargots</h3>
-                <p class="card__description">Au piment d'Espelette</p>
-              </div>
 
-              <div class="card-content__price">
-                <span class="card__price">25€</span>
-              </div>
-
-              <input class="card-content__checkbox" name="entree" id="entree-1" type="radio">
-              <div class="card-content__action--add">
-                <label for="entree-1">Ajouter ce plat</label>
-                <i class="icon-check"></i>
-              </div>
+          <label class="menu-option" for="entree-1">
+            <div class="menu-option__description">
+              <h3 class="menu-option__title">Fricassée d'escargots</h3>
+              <p class="menu-option__subtitle">au piment d'Espelette</p>
             </div>
-            <!-- .card-content  -->
-          </div>
-          <div class="card">
-            <div class="card-content">
-              <div class="card-content__text">
-                <h3 class="card__title">Fois gras de canard mi-cuit</h3>
-                <p class="card__description">Et ses copeaux de truffe noir</p>
-              </div>
 
-              <div class="card-content__price">
-                <span class="card__price">35€</span>
-              </div>
-
-              <input class="card-content__checkbox" name="entree" id="entree-2" type="radio">
-              <div class="card-content__action--add">
-                <label for="entree-2">Ajouter ce plat</label>
-                <i class="icon-check"></i>
-              </div>
+            <div class="menu-option__price">
+              <span class="menu-option__price--value">25</span>
+              <span class="menu-option__price--currency">€</span>
             </div>
-            <!-- .card-content  -->
-          </div>
-          <div class="card">
-            <div class="card-content">
-              <div class="card-content__text">
-                <h3 class="card__title">Oeuf au plat</h3>
-                <p class="card__description">Assaisonné à la truffe sur lit de caviar</p>
-              </div>
 
-              <div class="card-content__price">
-                <span class="card__price">20€</span>
-              </div>
-
-              <input class="card-content__checkbox" name="entree" id="entree-3" type="radio">
-              <div class="card-content__action--add">
-                <label for="entree-3">Ajouter ce plat</label>
-                <i class="icon-check"></i>
-              </div>
+            <input type="radio" name="entree" id="entree-1">
+            <div class="menu-option__checkbox">
+              <i class="icon-check" aria-hidden="true"></i>
             </div>
-            <!-- .card-content  -->
-          </div>
+          </label>
+
+          <label class="menu-option" for="entree-2">
+            <div class="menu-option__description">
+              <h3 class="menu-option__title">Foie gras de canard mi-cuit</h3>
+              <p class="menu-option__subtitle">et ses copeaux de truffe noire</p>
+            </div>
+
+            <div class="menu-option__price">
+              <span class="menu-option__price--value">35</span>
+              <span class="menu-option__price--currency">€</span>
+            </div>
+
+            <input type="radio" name="entree" id="entree-2">
+            <div class="menu-option__checkbox">
+              <i class="icon-check"></i>
+            </div>
+          </label>
+
+          <label class="menu-option" for="entree-3">
+            <div class="menu-option__description">
+              <h3 class="menu-option__title">Œuf au plat</h3>
+              <p class="menu-option__subtitle">assaisonné à la truffe sur lit de caviar</p>
+            </div>
+
+            <div class="menu-option__price">
+              <span class="menu-option__price--value">20</span>
+              <span class="menu-option__price--currency">€</span>
+            </div>
+
+            <input type="radio" name="entree" id="entree-3">
+            <div class="menu-option__checkbox">
+              <i class="icon-check"></i>
+            </div>
+          </label>
         </fieldset>
-
         <fieldset>
           <legend>Plats</legend>
-          <div class="card">
-            <div class="card-content">
-              <div class="card-content__text">
-                <h3 class="card__title">Filet de bœuf aux herbes</h3>
-                <p class="card__description">Accompagné de sa ribambelle de légumes</p>
-              </div>
-
-              <div class="card-content__price">
-                <span class="card__price">40€</span>
-              </div>
-
-              <input class="card-content__checkbox" name="plat" id="plat-1" type="radio">
-              <div class="card-content__action--add">
-                <label for="plat-1">Ajouter ce plat</label>
-                <i class="icon-check"></i>
-              </div>
+          <label class="menu-option" for="plat-1">
+            <div class="menu-option__description">
+              <h3 class="menu-option__title">Filet de bœuf aux herbes</h3>
+              <p class="menu-option__subtitle">accompagné de sa ribambelle de légumes</p>
             </div>
-            <!-- .card-content  -->
-          </div>
-          <div class="card">
-            <div class="card-content">
-              <div class="card-content__text">
-                <h3 class="card__title">Parmentier de queue de bœuf</h3>
-                <p class="card__description">À la truffe noire sur sa purée de panais</p>
-              </div>
 
-              <div class="card-content__price">
-                <span class="card__price">35€</span>
-              </div>
-
-              <input class="card-content__checkbox" name="plat" id="plat-2" type="radio">
-              <div class="card-content__action--add">
-                <label for="plat-2">Ajouter ce plat</label>
-                <i class="icon-check"></i>
-              </div>
+            <div class="menu-option__price">
+              <span class="menu-option__price--value">40</span>
+              <span class="menu-option__price--currency">€</span>
             </div>
-            <!-- .card-content  -->
-          </div>
-          <div class="card">
-            <div class="card-content">
-              <div class="card-content__text">
-                <h3 class="card__title">Filet de turbot</h3>
-                <p class="card__description">Aux agrumes</p>
-              </div>
 
-              <div class="card-content__price">
-                <span class="card__price">44€</span>
-              </div>
-
-              <input class="card-content__checkbox" name="plat" id="plat-3" type="radio">
-              <div class="card-content__action--add">
-                <label for="plat-3">Ajouter ce plat</label>
-                <i class="icon-check"></i>
-              </div>
+            <input type="radio" name="plat" id="plat-1">
+            <div class="menu-option__checkbox">
+              <i class="icon-check" aria-hidden="true"></i>
             </div>
-            <!-- .card-content  -->
-          </div>
+          </label>
+          <label class="menu-option" for="plat-2">
+            <div class="menu-option__description">
+              <h3 class="menu-option__title">Parmentier de queue de bœuf</h3>
+              <p class="menu-option__subtitle">à la truffe noire sur sa purée de panais</p>
+            </div>
+
+            <div class="menu-option__price">
+              <span class="menu-option__price--value">35</span>
+              <span class="menu-option__price--currency">€</span>
+            </div>
+
+            <input type="radio" name="plat" id="plat-2">
+            <div class="menu-option__checkbox">
+              <i class="icon-check"></i>
+            </div>
+          </label>
+          <label class="menu-option" for="plat-3">
+            <div class="menu-option__description">
+              <h3 class="menu-option__title">Filet de turbot</h3>
+              <p class="menu-option__subtitle">au agrumes</p>
+            </div>
+
+            <div class="menu-option__price">
+              <span class="menu-option__price--value">44</span>
+              <span class="menu-option__price--currency">€</span>
+            </div>
+
+            <input type="radio" name="plat" id="plat-3">
+            <div class="menu-option__checkbox">
+              <i class="icon-check"></i>
+            </div>
+          </label>
         </fieldset>
-
         <fieldset>
           <legend>Desserts</legend>
-          <div class="card">
-            <div class="card-content">
-              <div class="card-content__text">
-                <h3 class="card__title">Paris-Brest</h3>
-                <p class="card__description">Revisité</p>
-              </div>
-
-              <div class="card-content__price">
-                <span class="card__price">18€</span>
-              </div>
-
-              <input class="card-content__checkbox" name="dessert" id="dessert-1" type="radio">
-              <div class="card-content__action--add">
-                <label for="dessert-1">Ajouter ce dessert</label>
-                <i class="icon-check"></i>
-              </div>
+          <label class="menu-option" for="dessert-1">
+            <div class="menu-option__description">
+              <h3 class="menu-option__title">Paris-Brest</h3>
+              <p class="menu-option__subtitle">revisité</p>
             </div>
-            <!-- .card-content  -->
-          </div>
-          <div class="card">
-            <div class="card-content">
-              <div class="card-content__text">
-                <h3 class="card__title">Macaron au chocolat d'exception</h3>
-                <p class="card__description">Et glace à la vanille de Madagascar</p>
-              </div>
 
-              <div class="card-content__price">
-                <span class="card__price">22€</span>
-              </div>
-
-              <input class="card-content__checkbox" name="dessert" id="dessert-2" type="radio">
-              <div class="card-content__action--add">
-                <label for="dessert-2">Ajouter ce dessert</label>
-                <i class="icon-check"></i>
-              </div>
+            <div class="menu-option__price">
+              <span class="menu-option__price--value">18</span>
+              <span class="menu-option__price--currency">€</span>
             </div>
-            <!-- .card-content  -->
-          </div>
-          <div class="card">
-            <div class="card-content">
-              <div class="card-content__text">
-                <h3 class="card__title">Mousse au chocolat</h3>
-                <p class="card__description">Au piment d'Espelette et à la truffe noire</p>
-              </div>
 
-              <div class="card-content__price">
-                <span class="card__price">23€</span>
-              </div>
-
-              <input class="card-content__checkbox" name="dessert" id="dessert-3" type="radio">
-              <div class="card-content__action--add">
-                <label for="dessert-3">Ajouter ce dessert</label>
-                <i class="icon-check"></i>
-              </div>
+            <input type="radio" name="dessert" id="dessert-1">
+            <div class="menu-option__checkbox">
+              <i class="icon-check" aria-hidden="true"></i>
             </div>
-            <!-- .card-content  -->
-          </div>
+          </label>
+          <label class="menu-option" for="dessert-2">
+            <div class="menu-option__description">
+              <h3 class="menu-option__title">Macaron au chocolat d'exception</h3>
+              <p class="menu-option__subtitle">et sa glace à la vanille de Madagascar</p>
+            </div>
+
+            <div class="menu-option__price">
+              <span class="menu-option__price--value">22</span>
+              <span class="menu-option__price--currency">€</span>
+            </div>
+
+            <input type="radio" name="dessert" id="dessert-2">
+            <div class="menu-option__checkbox">
+              <i class="icon-check"></i>
+            </div>
+          </label>
+          <label class="menu-option" for="dessert-3">
+            <div class="menu-option__description">
+              <h3 class="menu-option__title">Mousse au chocolat</h3>
+              <p class="menu-option__subtitle">au piment d'Espelette et à la truffe noire</p>
+            </div>
+
+            <div class="menu-option__price">
+              <span class="menu-option__price--value">23</span>
+              <span class="menu-option__price--currency">€</span>
+            </div>
+
+            <input type="radio" name="dessert" id="dessert-3">
+            <div class="menu-option__checkbox">
+              <i class="icon-check"></i>
+            </div>
+          </label>
         </fieldset>
-
         <button class="button" type="submit">Commander</button>
       </form>
     </section>
-
-    <footer class="restaurant-footer"></footer>
   </main>
 
   <footer class="footer">
