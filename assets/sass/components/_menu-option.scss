@@ -13,13 +13,12 @@
 $_icon-size: calc(card.$title-font-size * 1.125);
 $_padding-block: var.$space-small;
 $_padding-inline: var.$space-medium;
-$_card-max-height: 69px;
+$_checkbox-max-width: 69px;
 
 .menu-option {
   @extend .card;
   display: grid;
   grid-template-columns: 1fr auto auto;
-  max-height: $_card-max-height;
 
   cursor: pointer;
 
@@ -57,7 +56,7 @@ $_card-max-height: 69px;
     }
     background-color: card.$accent-color;
     color: card.$accent-color-foreground;
-    width: $_card-max-height;
+    width: $_checkbox-max-width;
     max-width: 0;
     transition: max-width 150ms ease-in-out;
 
@@ -76,7 +75,7 @@ $_card-max-height: 69px;
 
   // Active state
   & > input:checked ~ .menu-option__checkbox {
-    max-width: $_card-max-height;
+    max-width: $_checkbox-max-width;
 
     i {
       opacity: 1;
