@@ -1,7 +1,7 @@
 @use "./cards" as card;
 @use "../abstracts/variables" as var;
 @use "../abstracts/mixins" as mixin;
-@use "../abstracts/animation" as animation;
+@use "../abstracts/animations" as animation;
 
 /**
  * Menu Item
@@ -17,9 +17,7 @@ $_checkbox-max-width: 69px;
 
 .menu-option {
   @extend .card;
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-
+  display: flex;
   cursor: pointer;
 
   &__description,
@@ -31,6 +29,7 @@ $_checkbox-max-width: 69px;
   // Text
   // Generally contains a title and a description
   &__description {
+    flex: 1;
     overflow: hidden;
     white-space: nowrap;
 

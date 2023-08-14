@@ -65,7 +65,7 @@
 @mixin aspect-ratio($width: 16, $height: 9, $fit: cover) {
   width: 100%;
   object-fit: $fit;
-  aspect-ratio: $width / $height;
+  aspect-ratio: #{$width} / #{$height};
 }
 
 // Box shadow mixin

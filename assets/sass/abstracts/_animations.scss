@@ -1,0 +1,52 @@
+// 👇 Bounce animation
+@mixin bounce(
+  $duration: 300ms,
+  $timing-function: ease-in-out,
+  $delay: 0s,
+  $scale: 1.75
+) {
+  animation: $duration bounce $delay ease-in-out;
+  @keyframes bounce {
+    50% {
+      scale: $scale;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+}
+
+@mixin reveal($duration: 500ms, $delay: 0) {
+  animation: $duration reveal $delay ease-out forwards;
+  @keyframes reveal {
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin spin($duration: 1s, $delay: 0s) {
+  animation: $duration spin $delay linear infinite;
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+      scale: 1;
+    }
+    50% {
+      scale: 1.5;
+    }
+    100% {
+      scale: 1;
+      transform: rotate(359deg);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -266,13 +266,13 @@ h4 {
 .card img, .menu-option img {
   width: 100%;
   object-fit: cover;
-  aspect-ratio: 2;
+  aspect-ratio: 400/200;
 }
 @media screen and (min-width: 1024px) {
   .card img, .menu-option img {
     width: 100%;
     object-fit: cover;
-    aspect-ratio: 2.5;
+    aspect-ratio: 500/200;
   }
 }
 .card :where(h1, h2, h3, h4), .menu-option :where(h1, h2, h3, h4) {
@@ -322,6 +322,14 @@ h4 {
   margin-right: 0.75rem;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .like {
   display: grid;
   position: relative;
@@ -413,6 +421,77 @@ h4 {
   flex-shrink: 0;
 }
 
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-content: center;
+  pointer-events: none;
+  opacity: 1;
+  background-color: white;
+  backdrop-filter: blur(5px);
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #353535;
+  font-family: "Shrikhand", cursive;
+  animation: 300ms reveal 5s ease-out forwards;
+}
+@keyframes reveal {
+  100% {
+    opacity: 0;
+  }
+}
+.loader__content {
+  position: relative;
+  width: min-content;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 100vmax;
+  padding: 1.5rem;
+  font-size: 2rem;
+}
+.loader__content span {
+  background: linear-gradient(to bottom, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.loader__content::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 1.5rem 0 0;
+  background: linear-gradient(to right, #ff79da, #9356dc);
+  filter: blur(1.5rem);
+  opacity: 0.85;
+  border-radius: inherit;
+  animation: 1s spin 0s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    scale: 1;
+  }
+  50% {
+    scale: 1.5;
+  }
+  100% {
+    scale: 1;
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes beat {
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /**
  * Menu Item
  * @extends .card
@@ -421,8 +500,7 @@ h4 {
  *
  * -------------------------------------------------------------------------- */
 .menu-option {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
+  display: flex;
   cursor: pointer;
 }
 .menu-option__description, .menu-option__price {
@@ -430,6 +508,7 @@ h4 {
   will-change: auto;
 }
 .menu-option__description {
+  flex: 1;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -695,6 +774,61 @@ body {
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important;
+}
+
+.fade-in {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.delay-100 {
+  animation-delay: calc(1 * 250ms);
+}
+
+.delay-200 {
+  animation-delay: calc(2 * 250ms);
+}
+
+.delay-300 {
+  animation-delay: calc(3 * 250ms);
+}
+
+.delay-400 {
+  animation-delay: calc(4 * 250ms);
+}
+
+.delay-500 {
+  animation-delay: calc(5 * 250ms);
+}
+
+.delay-600 {
+  animation-delay: calc(6 * 250ms);
+}
+
+.delay-700 {
+  animation-delay: calc(7 * 250ms);
+}
+
+.delay-800 {
+  animation-delay: calc(8 * 250ms);
+}
+
+.delay-900 {
+  animation-delay: calc(9 * 250ms);
+}
+
+.delay-1000 {
+  animation-delay: calc(10 * 250ms);
+}
+
+.delay-1100 {
+  animation-delay: calc(11 * 250ms);
+}
+
+.delay-1200 {
+  animation-delay: calc(12 * 250ms);
 }
 
 /*# sourceMappingURL=style.css.map */
