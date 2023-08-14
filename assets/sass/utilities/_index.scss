@@ -10,3 +10,16 @@
   width: 1px !important;
   white-space: nowrap !important;
 }
+
+.fade-in {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@for $i from 1 through 12 {
+  .delay-#{calc($i * 100)} {
+    animation-delay: calc(#{$i} * 250ms);
+  }
+}

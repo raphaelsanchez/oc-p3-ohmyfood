@@ -322,6 +322,14 @@ h4 {
   margin-right: 0.75rem;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .like {
   display: grid;
   position: relative;
@@ -766,6 +774,61 @@ body {
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important;
+}
+
+.fade-in {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.delay-100 {
+  animation-delay: calc(1 * 250ms);
+}
+
+.delay-200 {
+  animation-delay: calc(2 * 250ms);
+}
+
+.delay-300 {
+  animation-delay: calc(3 * 250ms);
+}
+
+.delay-400 {
+  animation-delay: calc(4 * 250ms);
+}
+
+.delay-500 {
+  animation-delay: calc(5 * 250ms);
+}
+
+.delay-600 {
+  animation-delay: calc(6 * 250ms);
+}
+
+.delay-700 {
+  animation-delay: calc(7 * 250ms);
+}
+
+.delay-800 {
+  animation-delay: calc(8 * 250ms);
+}
+
+.delay-900 {
+  animation-delay: calc(9 * 250ms);
+}
+
+.delay-1000 {
+  animation-delay: calc(10 * 250ms);
+}
+
+.delay-1100 {
+  animation-delay: calc(11 * 250ms);
+}
+
+.delay-1200 {
+  animation-delay: calc(12 * 250ms);
 }
 
 /*# sourceMappingURL=style.css.map */
