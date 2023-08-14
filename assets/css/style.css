@@ -492,8 +492,7 @@ h4 {
  *
  * -------------------------------------------------------------------------- */
 .menu-option {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
+  display: flex;
   cursor: pointer;
 }
 .menu-option__description, .menu-option__price {
@@ -501,6 +500,7 @@ h4 {
   will-change: auto;
 }
 .menu-option__description {
+  flex: 1;
   overflow: hidden;
   white-space: nowrap;
 }
