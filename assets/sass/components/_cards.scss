@@ -89,7 +89,8 @@
     display: grid;
     grid-template-columns: 1fr auto;
     padding: token.$card-content-padding;
-    padding: &__like {
+
+    &__like {
       display: grid;
       place-content: center;
     }
