@@ -52,7 +52,6 @@ $_checkbox-max-width: 69px;
 .menu-option {
   @extend .card;
   display: flex;
-  cursor: pointer;
 
   &__description,
   &__price {
@@ -92,12 +91,21 @@ $_checkbox-max-width: 69px;
     width: $_checkbox-max-width;
     max-width: 0;
     transition: max-width 150ms ease-in-out;
+    overflow: hidden;
 
     i {
       font-size: $_icon-size;
       opacity: 0.5;
+      pointer-events: none;
       transition: opacity 150ms ease-in-out 150ms;
     }
+  }
+
+  label {
+    position: absolute;
+    inset: 0;
+    text-indent: -100vmax;
+    cursor: pointer;
   }
 
   // Hover action

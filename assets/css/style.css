@@ -94,19 +94,19 @@ select {
 }
 @font-face {
   font-family: "Roboto";
-  font-style: light;
+  font-style: normal;
   font-weight: 300;
   src: url("../fonts/roboto/Roboto-Light.ttf") format("truetype"), url("../fonts/roboto/Roboto-Light.woff2") format("woff2"), url("../fonts/roboto/Roboto-Light.woff") format("woff");
 }
 @font-face {
   font-family: "Roboto";
-  font-style: medium;
+  font-style: normal;
   font-weight: 500;
   src: url("../fonts/roboto/Roboto-Medium.ttf") format("truetype"), url("../fonts/roboto/Roboto-Medium.woff2") format("woff2"), url("../fonts/roboto/Roboto-Medium.woff") format("woff");
 }
 @font-face {
   font-family: "Roboto";
-  font-style: bold;
+  font-style: normal;
   font-weight: 700;
   src: url("../fonts/roboto/Roboto-Bold.ttf") format("truetype"), url("../fonts/roboto/Roboto-Bold.woff2") format("woff2"), url("../fonts/roboto/Roboto-Bold.woff") format("woff");
 }
@@ -371,9 +371,10 @@ h4 {
   display: grid;
   grid-template-columns: 1fr auto;
   padding: 0.75rem 1.125rem;
-  padding: .card-content __like;
-  padding-display: grid;
-  padding-place-content: center;
+}
+.card-content__like {
+  display: grid;
+  place-content: center;
 }
 .card-content__link {
   position: absolute;
@@ -441,11 +442,11 @@ h4 {
   position: relative;
   z-index: 1;
   cursor: pointer;
-  scale: 1;
-  transition: scale 150ms ease-in-out;
+  transform: scale(1);
+  transition: transform 150ms ease-in-out;
 }
 .like:hover {
-  scale: 1.2;
+  transform: scale(1.2);
 }
 .like__icon {
   grid-column: 1;
@@ -475,10 +476,10 @@ h4 {
 }
 @keyframes bounce {
   50% {
-    scale: 1;
+    transform: scale(1);
   }
   100% {
-    scale: 1;
+    transform: scale(1);
   }
 }
 
@@ -565,7 +566,7 @@ h4 {
   font-weight: 500;
   color: #353535;
   font-family: "Shrikhand", cursive;
-  animation: 300ms reveal 5s ease-out forwards;
+  animation: 300ms reveal 3s ease-out forwards;
 }
 @keyframes reveal {
   100% {
@@ -603,13 +604,13 @@ h4 {
 @keyframes spin {
   0% {
     transform: rotate(0deg);
-    scale: 1;
+    transform: scale(1);
   }
   50% {
-    scale: 1.5;
+    transform: scale(1.5);
   }
   100% {
-    scale: 1;
+    transform: scale(1);
     transform: rotate(359deg);
   }
 }
@@ -665,7 +666,6 @@ h4 {
  * -------------------------------------------------------------------------- */
 .menu-option {
   display: flex;
-  cursor: pointer;
 }
 .menu-option__description, .menu-option__price {
   padding: 0.75rem 1.125rem;
@@ -694,6 +694,7 @@ h4 {
   width: 69px;
   max-width: 0;
   transition: max-width 150ms ease-in-out;
+  overflow: hidden;
 }
 .menu-option__checkbox > i {
   grid-column: 1;
@@ -702,7 +703,14 @@ h4 {
 .menu-option__checkbox i {
   font-size: 1.265625rem;
   opacity: 0.5;
+  pointer-events: none;
   transition: opacity 150ms ease-in-out 150ms;
+}
+.menu-option label {
+  position: absolute;
+  inset: 0;
+  text-indent: -100vmax;
+  cursor: pointer;
 }
 .menu-option:hover > .menu-option__checkbox {
   max-width: 2.265625rem;
@@ -717,10 +725,10 @@ h4 {
 }
 @keyframes bounce {
   50% {
-    scale: 1.75;
+    transform: scale(1.75);
   }
   100% {
-    scale: 1;
+    transform: scale(1);
   }
 }
 

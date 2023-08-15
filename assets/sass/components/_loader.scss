@@ -21,7 +21,7 @@ $loader-background: var.$clr-neutral-100;
   color: var.$clr-neutral-800;
   font-family: var.$ff-cursive;
 
-  @include animation.reveal($duration: 300ms, $delay: 5s);
+  @include animation.reveal($duration: 300ms, $delay: 3s);
 
   &__content {
     position: relative;
