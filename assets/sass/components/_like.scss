@@ -1,7 +1,24 @@
-@use "../abstracts/variables" as var;
+@use "../abstracts/tokens" as token;
 @use "../abstracts/mixins" as mixin;
 @use "../abstracts/animations" as animation;
 
+/**
+ * Like
+ *
+ * Available variables tokens:
+ * ---
+ * $like-icon-color
+ * $like-icon-color-active
+ *
+ * Example HTML:
+ * ---
+ * <label class="like" for="restaurant-1">
+ *   <span class="sr-only">Ajouter ce plat aux favoris</span>
+ *   <input class="like__input" id="restaurant-1" type="checkbox">
+ *   <i class="like__icon icon-heart" aria-hidden="true"></i>
+ *   <i class="like__icon icon-heart-plain" aria-hidden="true"></i>
+ * </label>
+ * -------------------------------------------------------------------------- */
 .like {
   display: grid;
   position: relative;
@@ -26,12 +43,12 @@
   }
 
   .icon-heart {
-    color: var.$clr-neutral-900;
+    color: token.$like-icon-color;
     transition: color 150ms ease-in-out;
   }
 
   .icon-heart-plain {
-    background: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
+    background: token.$like-icon-color-active;
     @include mixin.mask();
     opacity: 0;
     transition: opacity 150ms ease-in-out;

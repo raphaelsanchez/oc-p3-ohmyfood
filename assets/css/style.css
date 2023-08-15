@@ -199,6 +199,25 @@ h4 {
 /**
  * COMPONENTS
  * ========================================================================== */
+/**
+ * Cards
+ *
+ * Available variables tokens:
+ * ---
+ * $button-font-weight
+ * $button-font-size
+ * $button-padding
+ * $button-color-text
+ * $button-border-radius
+ * $button-shadow
+ * $button-shadow-hover
+ * $button-color-background
+ * $button-color-background-hover
+ *
+ * Example HTML:
+ * ---
+ * <button class="button"> ... </button>
+ * -------------------------------------------------------------------------- */
 .button {
   position: relative;
   isolation: isolate;
@@ -230,6 +249,25 @@ h4 {
   opacity: 0.1;
 }
 
+/**
+ * Location search
+ *
+ * Available variables tokens:
+ * ---
+ * $location-color-background
+ * $location-padding
+ * $location-icon-size
+ * $location-icon-color
+ * $location-icon-margin
+ * $location-font-weight
+ *
+ * Example HTML:
+ * ---
+ * <form class="location-search">
+ *   <i class="location-search__icon icon-location" aria-hidden="true"></i>
+ *   <input type="search" class="location-search__input" value="">
+ * </form>
+ * -------------------------------------------------------------------------- */
 .location-search {
   display: flex;
   gap: 0.75rem;
@@ -239,7 +277,11 @@ h4 {
   font-weight: 500;
   background-color: #eaeaea;
 }
-.location-search input {
+.location-search__icon {
+  font-size: 1.125rem;
+  color: #353535;
+}
+.location-search__input {
   background: transparent;
   border: none;
   outline: none;
@@ -247,6 +289,40 @@ h4 {
 
 /**
  * Cards
+ *
+ * Available variables tokens:
+ * - $card-title-font-size
+ * - $card-title-font-weight
+ * - $card-content-padding
+ * - $card-content-font-size
+ * - $card-shadow
+ * - $card-shadow-over
+ * - $card-border-radius
+ * - $card-accent-color
+ * - $card-accent-color-foreground
+ *
+ * Example HTML:
+ * ---
+ * <article class="card">
+ *   <figure class="card-cover">
+ *     <img src="" alt="">
+ *   </figure>
+ *   <div class="card-content">
+ *     <div class="card-content__text">
+ *       <h3 class="card-content__title"> ... </h3>
+ *       <p class="card-content__description"> ... </p>
+ *       <a class="card-content__link" href=""> ... </a>
+ *     </div>
+ *     <div class="card-content__like">
+ *       <label class="like" for="restaurant-1">
+ *         <span class="sr-only"> ... </span>
+ *         <input id="restaurant-1" type="checkbox">
+ *         <i class="like__icon icon-heart" aria-hidden="true"></i>
+ *         <i class="like__icon icon-heart-plain" aria-hidden="true"></i>
+ *       </label>
+ *     </div>
+ *   </div>
+ * </article>
  * -------------------------------------------------------------------------- */
 .card, .menu-option {
   position: relative;
@@ -295,10 +371,9 @@ h4 {
   display: grid;
   grid-template-columns: 1fr auto;
   padding: 0.75rem 1.125rem;
-}
-.card-content__like {
-  display: grid;
-  place-content: center;
+  padding: .card-content __like;
+  padding-display: grid;
+  padding-place-content: center;
 }
 .card-content__link {
   position: absolute;
@@ -307,7 +382,21 @@ h4 {
 }
 
 /**
- * NAVS
+ * Step list
+ *
+ * Available variables tokens:
+ * ---
+ *
+ * Example HTML:
+ * ---
+<ul class="nav">
+<li class="nav__item">
+<a class="nav__link" href="#"><i class="icon-ustencils" aria-hidden="true"></i> Proposer un restaurant</a>
+</li>
+<li class="nav__item">
+<a class="nav__link" href="#"><i class="icon-hands" aria-hidden="true"></i>Devenir partenaire</a>
+</li>
+</ul>
  * -------------------------------------------------------------------------- */
 .nav {
   list-style: none;
@@ -330,6 +419,23 @@ h4 {
     opacity: 1;
   }
 }
+/**
+ * Like
+ *
+ * Available variables tokens:
+ * ---
+ * $like-icon-color
+ * $like-icon-color-active
+ *
+ * Example HTML:
+ * ---
+ * <label class="like" for="restaurant-1">
+ *   <span class="sr-only">Ajouter ce plat aux favoris</span>
+ *   <input class="like__input" id="restaurant-1" type="checkbox">
+ *   <i class="like__icon icon-heart" aria-hidden="true"></i>
+ *   <i class="like__icon icon-heart-plain" aria-hidden="true"></i>
+ * </label>
+ * -------------------------------------------------------------------------- */
 .like {
   display: grid;
   position: relative;
@@ -355,7 +461,7 @@ h4 {
   transition: color 150ms ease-in-out;
 }
 .like .icon-heart-plain {
-  background: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
+  background: linear-gradient(to bottom, #ff79da 0%, #9356dc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
@@ -377,14 +483,38 @@ h4 {
 }
 
 /**
- * Cards
+ * Step list
  *
- * Tokens:
- * $steps-list-color-background
- * $steps-list-color-text
- * $steps-list-color-icon:
- * $steps-list-color-number
+ * Available variables tokens:
+ * ---
  * $steps-list-padding
+ * $steps-list-background
+ * $steps-list-radius
+ * $steps-list-shadow
+ * $steps-list-text-color
+ * $steps-list-text-weight
+ * $steps-list-text-line-height
+ * $steps-list-icon-color
+ * $steps-list-counter-background
+ * $steps-list-counter-color
+ * $steps-list-counter-radius
+ *
+ * Example HTML:
+ * ---
+<ol class="steps-list">
+  <li class="steps-list__item">
+    <i class="icon-phone" aria-hidden="true"></i>
+    <span> ... </span>
+  </li>
+  <li class="steps-list__item">
+    <i class="icon-list" aria-hidden="true"></i>
+    <span> ... </span>
+  </li>
+  <li class="steps-list__item">
+    <i class="icon-store" aria-hidden="true"></i>
+    <span> ... </span>
+  </li>
+</ol>
  * -------------------------------------------------------------------------- */
 .steps-list {
   counter-reset: step;
@@ -496,7 +626,41 @@ h4 {
  * Menu Item
  * @extends .card
  *
- * @example:
+ * Available variables tokens:
+ * ---
+ * - $card-title-font-size
+ * - $card-title-font-weight
+ * - $card-content-padding
+ * - $card-content-font-size
+ * - $card-shadow
+ * - $card-shadow-over
+ * - $card-border-radius
+ * - $card-accent-color
+ * - $card-accent-color-foreground
+ *
+ * Local variables:
+ * ---
+ * - $_icon-size
+ * - $_checkbox-max-width
+ *
+ * Example HTML:
+ * ---
+ * <label class="menu-option fade-in delay-100" for="entree-1">
+ *   <div class="menu-option__description">
+ *     <h3 class="menu-option__title"> ... </h3>
+ *     <p class="menu-option__subtitle"> ... </p>
+ *   </div>
+ * 
+ *   <div class="menu-option__price">
+ *     <span class="menu-option__price--value"> ... </span>
+ *     <span class="menu-option__price--currency"> ... </span>
+ *   </div>
+ * 
+ *   <input type="radio" name="entree" id="entree-1">
+ *   <div class="menu-option__checkbox">
+ *     <i class="icon-check" aria-hidden="true"></i>
+ *   </div>
+ * </label>
  *
  * -------------------------------------------------------------------------- */
 .menu-option {
@@ -520,7 +684,7 @@ h4 {
 }
 .menu-option__price {
   align-self: flex-end;
-  font-weight: 700;
+  font-weight: 500;
 }
 .menu-option__checkbox {
   display: grid;

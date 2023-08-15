@@ -1,35 +1,56 @@
-@use "../abstracts/variables" as var;
+@use "../abstracts/tokens" as token;
 @use "../abstracts/mixins" as mixin;
 
 /**
  * Cards
+ *
+ * Available variables tokens:
+ * - $card-title-font-size
+ * - $card-title-font-weight
+ * - $card-content-padding
+ * - $card-content-font-size
+ * - $card-shadow
+ * - $card-shadow-over
+ * - $card-border-radius
+ * - $card-accent-color
+ * - $card-accent-color-foreground
+ *
+ * Example HTML:
+ * ---
+ * <article class="card">
+ *   <figure class="card-cover">
+ *     <img src="" alt="">
+ *   </figure>
+ *   <div class="card-content">
+ *     <div class="card-content__text">
+ *       <h3 class="card-content__title"> ... </h3>
+ *       <p class="card-content__description"> ... </p>
+ *       <a class="card-content__link" href=""> ... </a>
+ *     </div>
+ *     <div class="card-content__like">
+ *       <label class="like" for="restaurant-1">
+ *         <span class="sr-only"> ... </span>
+ *         <input id="restaurant-1" type="checkbox">
+ *         <i class="like__icon icon-heart" aria-hidden="true"></i>
+ *         <i class="like__icon icon-heart-plain" aria-hidden="true"></i>
+ *       </label>
+ *     </div>
+ *   </div>
+ * </article>
  * -------------------------------------------------------------------------- */
-// var: Font
-$title-font-size: var.$fs-medium !default;
-$content-font-size: var.$fs-normal !default;
-
-// var: Shadow
-$shadow: var.$shadow-200 !default;
-$shadow-over: var.$shadow-300 !default;
-$border-radius: var.$radius-medium !default;
-
-// var: Accent color
-$accent-color: var.$clr-accent !default;
-$accent-color-foreground: var.$clr-neutral-100 !default;
-
 // Component
 .card {
   position: relative;
-  border-radius: $border-radius;
+  border-radius: token.$card-border-radius;
   overflow: hidden;
-  font-size: $content-font-size;
-  @include mixin.shadow($shadow);
+  font-size: token.$card-content-font-size;
+  @include mixin.shadow(token.$card-shadow);
 
   // Prevent hover on touch devices
   @media (hover: hover) {
     transition: box-shadow 300ms ease-in-out;
     &:hover {
-      @include mixin.shadow($shadow-over);
+      @include mixin.shadow(token.$card-shadow-over);
     }
   }
 
@@ -45,8 +66,8 @@ $accent-color-foreground: var.$clr-neutral-100 !default;
   // Card-content
   // define default title style. Can be overwritten by higher specificity
   :where(h1, h2, h3, h4) {
-    font-size: $title-font-size;
-    font-weight: var.$fw-medium;
+    font-size: token.$card-title-font-size;
+    font-weight: token.$card-title-font-weight;
   }
 
   // Checkbox
@@ -67,9 +88,8 @@ $accent-color-foreground: var.$clr-neutral-100 !default;
   &-content {
     display: grid;
     grid-template-columns: 1fr auto;
-    padding: var.$space-small var.$space-medium;
-
-    &__like {
+    padding: token.$card-content-padding;
+    padding: &__like {
       display: grid;
       place-content: center;
     }
