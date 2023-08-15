@@ -665,7 +665,6 @@ h4 {
  * -------------------------------------------------------------------------- */
 .menu-option {
   display: flex;
-  cursor: pointer;
 }
 .menu-option__description, .menu-option__price {
   padding: 0.75rem 1.125rem;
@@ -694,6 +693,7 @@ h4 {
   width: 69px;
   max-width: 0;
   transition: max-width 150ms ease-in-out;
+  overflow: hidden;
 }
 .menu-option__checkbox > i {
   grid-column: 1;
@@ -702,7 +702,14 @@ h4 {
 .menu-option__checkbox i {
   font-size: 1.265625rem;
   opacity: 0.5;
+  pointer-events: none;
   transition: opacity 150ms ease-in-out 150ms;
+}
+.menu-option label {
+  position: absolute;
+  inset: 0;
+  text-indent: -100vmax;
+  cursor: pointer;
 }
 .menu-option:hover > .menu-option__checkbox {
   max-width: 2.265625rem;
