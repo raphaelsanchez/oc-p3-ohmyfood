@@ -566,7 +566,7 @@ h4 {
   font-weight: 500;
   color: #353535;
   font-family: "Shrikhand", cursive;
-  animation: 300ms reveal 5s ease-out forwards;
+  animation: 300ms reveal 3s ease-out forwards;
 }
 @keyframes reveal {
   100% {
