@@ -2,14 +2,38 @@
 @use "../abstracts/mixins" as mixin;
 
 /**
- * Cards
+ * Step list
  *
- * Tokens:
- * $steps-list-color-background
- * $steps-list-color-text
- * $steps-list-color-icon:
- * $steps-list-color-number
+ * Available variables tokens:
+ * ---
  * $steps-list-padding
+ * $steps-list-background
+ * $steps-list-radius
+ * $steps-list-shadow
+ * $steps-list-text-color
+ * $steps-list-text-weight
+ * $steps-list-text-line-height
+ * $steps-list-icon-color
+ * $steps-list-counter-background
+ * $steps-list-counter-color
+ * $steps-list-counter-radius
+ *
+ * Example HTML:
+ * ---
+<ol class="steps-list">
+  <li class="steps-list__item">
+    <i class="icon-phone" aria-hidden="true"></i>
+    <span> ... </span>
+  </li>
+  <li class="steps-list__item">
+    <i class="icon-list" aria-hidden="true"></i>
+    <span> ... </span>
+  </li>
+  <li class="steps-list__item">
+    <i class="icon-store" aria-hidden="true"></i>
+    <span> ... </span>
+  </li>
+</ol>
  * -------------------------------------------------------------------------- */
 
 .steps-list {

@@ -1,5 +1,6 @@
 @use "./cards" as card;
 @use "../abstracts/variables" as var;
+@use "../abstracts/tokens" as token;
 @use "../abstracts/mixins" as mixin;
 @use "../abstracts/animations" as animation;
 
@@ -7,12 +8,45 @@
  * Menu Item
  * @extends .card
  *
- * @example:
+ * Available variables tokens:
+ * ---
+ * - $card-title-font-size
+ * - $card-title-font-weight
+ * - $card-content-padding
+ * - $card-content-font-size
+ * - $card-shadow
+ * - $card-shadow-over
+ * - $card-border-radius
+ * - $card-accent-color
+ * - $card-accent-color-foreground
+ *
+ * Local variables:
+ * ---
+ * - $_icon-size
+ * - $_checkbox-max-width
+ *
+ * Example HTML:
+ * ---
+ * <label class="menu-option fade-in delay-100" for="entree-1">
+ *   <div class="menu-option__description">
+ *     <h3 class="menu-option__title"> ... </h3>
+ *     <p class="menu-option__subtitle"> ... </p>
+ *   </div>
+ * 
+ *   <div class="menu-option__price">
+ *     <span class="menu-option__price--value"> ... </span>
+ *     <span class="menu-option__price--currency"> ... </span>
+ *   </div>
+ * 
+ *   <input type="radio" name="entree" id="entree-1">
+ *   <div class="menu-option__checkbox">
+ *     <i class="icon-check" aria-hidden="true"></i>
+ *   </div>
+ * </label>
  *
  * -------------------------------------------------------------------------- */
-$_icon-size: calc(card.$title-font-size * 1.125);
-$_padding-block: var.$space-small;
-$_padding-inline: var.$space-medium;
+
+$_icon-size: calc(token.$card-title-font-size * 1.125);
 $_checkbox-max-width: 69px;
 
 .menu-option {
@@ -22,7 +56,7 @@ $_checkbox-max-width: 69px;
 
   &__description,
   &__price {
-    padding: $_padding-block $_padding-inline;
+    padding: token.$card-content-padding;
     will-change: auto;
   }
 
@@ -41,7 +75,7 @@ $_checkbox-max-width: 69px;
   // Price
   &__price {
     align-self: flex-end;
-    font-weight: var.$fw-bold;
+    font-weight: token.$card-title-font-weight;
   }
 
   // Checkbox
@@ -53,8 +87,8 @@ $_checkbox-max-width: 69px;
       grid-column: 1;
       grid-row: 1;
     }
-    background-color: card.$accent-color;
-    color: card.$accent-color-foreground;
+    background-color: token.$card-accent-color;
+    color: token.$card-accent-color-foreground;
     width: $_checkbox-max-width;
     max-width: 0;
     transition: max-width 150ms ease-in-out;

@@ -1,6 +1,26 @@
 @use "../abstracts/tokens" as token;
 @use "../abstracts/mixins" as mixin;
 
+/**
+ * Cards
+ *
+ * Available variables tokens:
+ * ---
+ * $button-font-weight
+ * $button-font-size
+ * $button-padding
+ * $button-color-text
+ * $button-border-radius
+ * $button-shadow
+ * $button-shadow-hover
+ * $button-color-background
+ * $button-color-background-hover
+ *
+ * Example HTML:
+ * ---
+ * <button class="button"> ... </button>
+ * -------------------------------------------------------------------------- */
+
 .button {
   position: relative;
   isolation: isolate;

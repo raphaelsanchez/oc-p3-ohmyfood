@@ -1,18 +1,40 @@
 @use "../abstracts/tokens" as token;
 
+/**
+ * Location search
+ *
+ * Available variables tokens:
+ * ---
+ * $location-color-background
+ * $location-padding
+ * $location-icon-size
+ * $location-icon-color
+ * $location-icon-margin
+ * $location-font-weight
+ *
+ * Example HTML:
+ * ---
+ * <form class="location-search">
+ *   <i class="location-search__icon icon-location" aria-hidden="true"></i>
+ *   <input type="search" class="location-search__input" value="">
+ * </form>
+ * -------------------------------------------------------------------------- */
+
 .location-search {
   display: flex;
   gap: token.$location-icon-margin;
   align-items: center;
   justify-content: center;
-
   padding: token.$location-padding;
-
   font-weight: token.$location-font-weight;
-
   background-color: token.$location-color-background;
 
-  input {
+  &__icon {
+    font-size: token.$location-icon-size;
+    color: token.$location-icon-color;
+  }
+
+  &__input {
     background: transparent;
     border: none;
     outline: none;

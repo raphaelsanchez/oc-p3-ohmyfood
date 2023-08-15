@@ -1,7 +1,21 @@
 @use "../abstracts/variables" as var;
 
 /**
- * NAVS
+ * Step list
+ *
+ * Available variables tokens:
+ * ---
+ *
+ * Example HTML:
+ * ---
+<ul class="nav">
+<li class="nav__item">
+<a class="nav__link" href="#"><i class="icon-ustencils" aria-hidden="true"></i> Proposer un restaurant</a>
+</li>
+<li class="nav__item">
+<a class="nav__link" href="#"><i class="icon-hands" aria-hidden="true"></i>Devenir partenaire</a>
+</li>
+</ul>
  * -------------------------------------------------------------------------- */
 .nav {
   list-style: none;

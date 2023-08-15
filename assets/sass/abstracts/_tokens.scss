@@ -5,33 +5,42 @@
 // the design system.
 // ------------------------------------------------------------------------------
 
-// Document
+// Body
+// ------------------------------------------------------------------------------
 $body-font-family: var.$ff-sans;
 $body-font-weight: var.$fw-normal;
 $body-font-size: var.$fs-normal;
-$body-color-text: var.$clr-neutral-900;
+
 $body-line-height: var.$flh-body;
+
+$body-color-text: var.$clr-neutral-900;
 $body-color-heading: var.$clr-neutral-900;
 $body-color-accent: var.$clr-accent;
 $body-color-background: var.$clr-neutral-100;
 
-// Heading
+// Headings
+// ------------------------------------------------------------------------------
 $heading-font-family: var.$ff-sans;
 $heading-font-weight: var.$fw-bold;
 $heading-font-size-h1: var.$fs-xlarge;
 $heading-font-size-h2: var.$fs-large;
 $heading-font-size-h3: var.$fs-medium;
 $heading-font-size-h4: var.$fs-normal;
+
 $heading-line-height: var.$flh-heading;
 
 // Buttons
+// ------------------------------------------------------------------------------
 $button-font-weight: var.$fw-medium;
 $button-font-size: var.$fs-normal;
+
 $button-padding: var.$space-small var.$space-medium;
-$button-color-text: var.$clr-neutral-100;
 $button-border-radius: var.$radius-full;
+
 $button-shadow: var.$shadow-200;
 $button-shadow-hover: var.$shadow-300;
+
+$button-color-text: var.$clr-neutral-100;
 $button-color-background: linear-gradient(
   to bottom,
   var.$clr-gradient-1 0%,
@@ -39,45 +48,82 @@ $button-color-background: linear-gradient(
 );
 $button-color-background-hover: var.$clr-neutral-100;
 
+// Cards
+// ------------------------------------------------------------------------------
+$card-title-font-size: var.$fs-medium;
+$card-title-font-weight: var.$fw-medium;
+
+$card-content-padding: var.$space-small var.$space-medium;
+$card-content-font-size: var.$fs-normal;
+
+$card-shadow: var.$shadow-200;
+$card-shadow-over: var.$shadow-300;
+$card-border-radius: var.$radius-medium;
+
+$card-accent-color: var.$clr-accent;
+$card-accent-color-foreground: var.$clr-neutral-100;
+
 // Header
+// ------------------------------------------------------------------------------
 $header-padding: var.$space-medium;
+
 $header-logo-mobile-width: 10rem;
 $header-logo-desktop-width: 12.5rem;
+
 $header-color-background: var.$clr-neutral-100;
 $header-color-text: var.$clr-neutral-900;
+
 $header-shadow: var.$shadow-100;
+
 $header-icon-size: var.$fs-medium;
 
 // Footer
+// ------------------------------------------------------------------------------
 $footer-padding-mobile: var.$space-medium;
 $footer-padding-desktop: var.$space-xlarge var.$space-large var.$space-medium;
+
 $footer-gap-mobile: var.$space-small;
 $footer-gap-desktop: var.$space-large;
+
 $footer-color-background: var.$clr-neutral-800;
 $footer-color-text: var.$clr-neutral-100;
+
 $footer-font-size: var.$fs-normal;
 $footer-title-font-family: var.$ff-cursive;
 
-// Location
+// Like
+// ------------------------------------------------------------------------------
+$like-icon-color: var.$clr-neutral-900;
+$like-icon-color-active: linear-gradient(
+  to bottom,
+  #{var.$clr-gradient-1} 0%,
+  #{var.$clr-gradient-2} 100%
+);
+
+// Location Search
+// ------------------------------------------------------------------------------
 $location-color-background: var.$clr-neutral-300;
 $location-padding: var.$space-small;
-$location-icon-size: var.$fs-large;
-$location-icon-color: var.$clr-accent;
+
+$location-icon-size: var.$fs-medium;
+$location-icon-color: var.$clr-neutral-800;
 $location-icon-margin: var.$space-small;
+
 $location-font-weight: var.$fw-medium;
 
 // Steps List
+// ------------------------------------------------------------------------------
 $steps-list-background: var.$clr-neutral-200;
 $steps-list-padding: var.$space-medium;
 $steps-list-radius: var.$radius-medium;
 $steps-list-shadow: var.$shadow-200;
-// - text
+
 $steps-list-text-color: var.$clr-neutral-900;
 $steps-list-text-weight: var.$fw-medium;
 $steps-list-text-line-height: var.$flh-heading;
-// - icon
+
 $steps-list-icon-color: var.$clr-neutral-600;
-// - counter
+
 $steps-list-counter-background: var.$clr-primary-dark;
 $steps-list-counter-color: var.$clr-neutral-100;
 $steps-list-counter-radius: var.$radius-full;
