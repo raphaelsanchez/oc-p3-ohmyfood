@@ -44,6 +44,7 @@
   border-radius: token.$card-border-radius;
   overflow: hidden;
   font-size: token.$card-content-font-size;
+  background-color: token.$card-background-color;
   @include mixin.shadow(token.$card-shadow);
 
   // Prevent hover on touch devices

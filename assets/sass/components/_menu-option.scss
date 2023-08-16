@@ -109,9 +109,11 @@ $_checkbox-max-width: 69px;
   }
 
   // Hover action
-  &:hover > .menu-option__checkbox {
-    max-width: calc($_icon-size + 1rem);
-    transition: max-width 300ms ease-in-out;
+  @media (hover: hover) {
+    &:hover > .menu-option__checkbox {
+      max-width: calc($_icon-size + 1rem);
+      transition: max-width 300ms ease-in-out;
+    }
   }
 
   // Active state
