@@ -56,10 +56,18 @@ $loader-background: var.$clr-neutral-100;
         var.$clr-gradient-1,
         var.$clr-gradient-2
       );
-      filter: blur(1.5rem);
-      opacity: 0.85;
       border-radius: inherit;
-      @include animation.spin($duration: 1s);
+      @include animation.loader($duration: 2s);
+    }
+
+    &::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      inset: 0 1.5rem 0 0;
+      background: linear-gradient(to right, var.$clr-accent, var.$clr-accent);
+      border-radius: inherit;
+      @include animation.loader($duration: 2s);
     }
   }
 }

@@ -596,22 +596,50 @@ h4 {
   position: absolute;
   inset: 1.5rem 0 0;
   background: linear-gradient(to right, #ff79da, #9356dc);
-  filter: blur(1.5rem);
-  opacity: 0.85;
   border-radius: inherit;
-  animation: 1s spin 0s linear infinite;
+  animation: 2s loader 0s linear infinite;
 }
-@keyframes spin {
+@keyframes loader {
   0% {
-    transform: rotate(0deg);
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
+    opacity: 0.85;
+    filter: blur(0.5rem);
   }
   50% {
-    transform: scale(1.5);
+    transform: scale(1.25) rotate(360deg);
+    opacity: 0.5;
+    filter: blur(1.5rem);
   }
   100% {
-    transform: scale(1);
-    transform: rotate(359deg);
+    transform: scale(1) rotate(720deg);
+    opacity: 0.85;
+    filter: blur(0.5rem);
+  }
+}
+.loader__content::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0 1.5rem 0 0;
+  background: linear-gradient(to right, #99e2d0, #99e2d0);
+  border-radius: inherit;
+  animation: 2s loader 0s linear infinite;
+}
+@keyframes loader {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.85;
+    filter: blur(0.5rem);
+  }
+  50% {
+    transform: scale(1.25) rotate(360deg);
+    opacity: 0.5;
+    filter: blur(1.5rem);
+  }
+  100% {
+    transform: scale(1) rotate(720deg);
+    opacity: 0.85;
+    filter: blur(0.5rem);
   }
 }
 
